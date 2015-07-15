@@ -322,7 +322,7 @@ class mycarrier extends CarrierModule
 	public function getOrderShippingCost($params, $shipping_cost)
 	{
 	
-		print_r(Configuration::get('MYCARRIER1_CARRIER_ID'));
+	//	print_r(Configuration::get('MYCARRIER1_CARRIER_ID'));
 		// This example returns shipping cost with overcost set in the back-office, but you can call a webservice or calculate what you want before returning the final value to the Cart
 		if ($this->id_carrier == (int)(Configuration::get('MYCARRIER1_CARRIER_ID')) )
 			//return (float)(Configuration::get('MYCARRIER1_OVERCOST'));
