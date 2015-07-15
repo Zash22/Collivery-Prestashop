@@ -313,6 +313,8 @@ class AddressControllerCore extends FrontController
 			'countries' => $countries,
 			'sl_country' => (int)$this->id_country,
 		));
+		
+		
 	}
 
 	/**
@@ -366,4 +368,7 @@ class AddressControllerCore extends FrontController
 			$this->ajaxDie(Tools::jsonEncode($return));
 		}
 	}
+	
+	
+ 
 }
