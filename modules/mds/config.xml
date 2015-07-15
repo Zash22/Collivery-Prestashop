@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
 	<name>mds</name>
-	<displayName><![CDATA[MDS Shipping Module]]></displayName>
+	<displayName><![CDATA[MDS Shipping]]></displayName>
 	<version><![CDATA[1.0]]></version>
 	<description><![CDATA[MDS courier integration]]></description>
 	<author><![CDATA[Nicole Johnson]]></author>

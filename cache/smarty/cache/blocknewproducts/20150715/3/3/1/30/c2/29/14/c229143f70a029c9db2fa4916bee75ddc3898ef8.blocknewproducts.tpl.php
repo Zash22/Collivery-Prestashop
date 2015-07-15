@@ -11,11 +11,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'nocache_hash' => '174120027755a5148b1672d0-52740134',
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a61698b2f3b9_64892738',
+  'unifunc' => 'content_55a66ee580af83_71674894',
   'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a61698b2f3b9_64892738')) {function content_55a61698b2f3b9_64892738($_smarty_tpl) {?><!-- MODULE Block new products -->
+<?php if ($_valid && !is_callable('content_55a66ee580af83_71674894')) {function content_55a66ee580af83_71674894($_smarty_tpl) {?><!-- MODULE Block new products -->
 <div id="new-products_block_right" class="block products_block">
 	<h4 class="title_block">
     	<a href="http://localhost/Collivery-Prestashop/index.php?controller=new-products" title="New products">New products</a>
