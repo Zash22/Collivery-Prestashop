@@ -7,18 +7,18 @@ Launch Configurations=Launch Configuration 0,Launch Configuration 1,Launch Confi
 [Launch][Launch Configuration 0]
 Configured Launch Modes=execute
 Configured Launchers=scriptAppLauncher
-Name=New Script Application Launcher
+Name=mycarrier2
 Type=Script Application
 
 [Launch][Launch Configuration 0][Data]
 Arguments=
 EnvironmentGroup=default
-Executable=file:///var/www/html/Collivery-Prestashop/modules/mds/mds.php
+Executable=file:///var/www/html/Collivery-Prestashop/modules/mycarrier2/mycarrier2.php
 Execute on Remote Host=false
 Interpreter=php
 Output Filtering Mode=0
 Remote Host=
-Working Directory=
+Working Directory=file:///home/nicole/Documents
 
 [Launch][Launch Configuration 1]
 Configured Launch Modes=execute

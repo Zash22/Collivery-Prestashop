@@ -3,6 +3,12 @@
 // Avoid direct access to the file
 if (!defined('_PS_VERSION_'))
 	exit;
+	
+include_once __DIR__."/mds/Collivery.php";
+include_once __DIR__."/mds/Cache.php";
+
+use Mds\Collivery;
+use Mds\Cache;
 
 class mycarrier2 extends CarrierModule
 {
@@ -133,16 +139,19 @@ class mycarrier2 extends CarrierModule
 		$id_carrier2 = $this->installExternalCarrier($carrierConfig[1]);
 		$id_carrier3 = $this->installExternalCarrier($carrierConfig[2]);
 		$id_carrier4 = $this->installExternalCarrier($carrierConfig[3]);
+            
 		Configuration::updateValue('MYCARRIER1_CARRIER_ID', '1');
 		Configuration::updateValue('MYCARRIER2_CARRIER_ID', '2');
 		Configuration::updateValue('MYCARRIER3_CARRIER_ID', '3');
 		Configuration::updateValue('MYCARRIER4_CARRIER_ID', '5');
+
 		if (!parent::install() ||
 		    !Configuration::updateValue('MYCARRIER1_OVERCOST', '') ||
 		    !Configuration::updateValue('MYCARRIER2_OVERCOST', '') ||
-		     !Configuration::updateValue('MYCARRIER3_OVERCOST', '') ||
-		      !Configuration::updateValue('MYCARRIER4_OVERCOST', '') ||
-		    !$this->registerHook('updateCarrier'))
+		    !Configuration::updateValue('MYCARRIER3_OVERCOST', '') ||
+		    !Configuration::updateValue('MYCARRIER4_OVERCOST', '') ||
+		    !$this->registerHook('updateCarrier') ||
+		    !$this-> registerHook('leftColumn')) 
 			return false;
 		return true;
 	}
@@ -155,7 +164,10 @@ class mycarrier2 extends CarrierModule
 		    !Configuration::deleteByName('MYCARRIER2_OVERCOST') ||
 		    !Configuration::deleteByName('MYCARRIER3_OVERCOST') ||
 		    !Configuration::deleteByName('MYCARRIER4_OVERCOST') ||
-		    !$this->unregisterHook('updateCarrier'))
+		   
+		    
+		    !$this->unregisterHook('updateCarrier') ||
+		    !$this->unregisterHook('leftColumn'))
 			return false;
 		
 		// Delete External Carrier
@@ -319,8 +331,14 @@ class mycarrier2 extends CarrierModule
 						<div class="margin-form"><input type="text" size="20" name="mycarrier3_overcost" value="'.Tools::getValue('mycarrier3_overcost', Configuration::get('MYCARRIER3_OVERCOST')).'" /></div>
 						<label>'.$this->l('Road Freight').' : </label>
 						<div class="margin-form"><input type="text" size="20" name="mycarrier4_overcost" value="'.Tools::getValue('mycarrier4_overcost', Configuration::get('MYCARRIER4_OVERCOST')).'" /></div>
+						<label>'.$this->l('MDS account email').'</label>
+						<div class="margin-form"><input type="text" name="your_email" value="'. Tools::getValue('your_email') . '"  /></div>
+						<label>'.$this->l('MDS account password').'</label>
+						<div class="margin-form"><input type="text" name="your_password" value="'. Tools::getValue('your_password') . '" /></div>
+						<label>'.$this->l('MDS risk cover').'</label>
+						<div class="margin-form"><input type="checkbox" name="your_riskcover" /></div>
 					</div>
-					<br /><br />
+				<br /><br />
 				</fieldset>				
 				<div class="margin-form"><input class="button" name="submitSave" type="submit"></div>
 			</form>
@@ -336,11 +354,17 @@ class mycarrier2 extends CarrierModule
 
 	private function _postProcess()
 	{
-		// Saving new configurations
+			$email = Tools::getValue('your_email'); //nj
+            $password = Tools::getValue('your_password'); //nj
+            // Saving new configurations
+		
+		
 		if (Configuration::updateValue('MYCARRIER1_OVERCOST', Tools::getValue('mycarrier1_overcost')) &&
 		    Configuration::updateValue('MYCARRIER2_OVERCOST', Tools::getValue('mycarrier2_overcost')) &&
 		    Configuration::updateValue('MYCARRIER3_OVERCOST', Tools::getValue('mycarrier3_overcost')) &&
-		    Configuration::updateValue('MYCARRIER4_OVERCOST', Tools::getValue('mycarrier4_overcost')) )
+		    Configuration::updateValue('MYCARRIER4_OVERCOST', Tools::getValue('mycarrier4_overcost')) &&
+		    Configuration::updateValue($this->name.'_email', $email) && //nj
+			Configuration::updateValue($this->name.'_password', $password))//nj
 			$this->_html .= $this->displayConfirmation($this->l('Settings updated'));
 		else
 			$this->_html .= $this->displayErrors($this->l('Settings failed'));
@@ -383,17 +407,8 @@ class mycarrier2 extends CarrierModule
 	public function getOrderShippingCost($params, $shipping_cost)
 	{
 	
-		//print_r(Configuration::get('MYCARRIER1_CARRIER_ID'));
-// 		// This example returns shipping cost with overcost set in the back-office, but you can call a webservice or calculate what you want before returning the final value to the Cart
-// 		if ($this->id_carrier == (int)(Configuration::get('MYCARRIER1_CARRIER_ID')) )
-// 			//return (float)(Configuration::get('MYCARRIER1_OVERCOST'));
-// 			return 20;
-// 		if ($this->id_carrier == (int)(Configuration::get('MYCARRIER2_CARRIER_ID')) )
-// // 			return (float)(Configuration::get('MYCARRIER2_OVERCOST'));
-// 		return 21;
 
-		// If the carrier is not known, you can return false, the carrier won't appear in the order process
-		//return 20;
+
 				if ($this->id_carrier == (int)(Configuration::get('MYCARRIER1_CARRIER_ID')) && Configuration::get('MYCARRIER1_OVERCOST') > 1)
 			//return (float)(Configuration::get('MYCARRIER1_OVERCOST'));
 							if ($this->id_carrier == (int)(Configuration::get('MYCARRIER2_CARRIER_ID')) && Configuration::get('MYCARRIER2_OVERCOST') > 1)
@@ -420,6 +435,23 @@ class mycarrier2 extends CarrierModule
 		//return 30;
 	}
 	
+//     public function loginToCollivery ( $email, $password ) {
+// 
+// 	   $this->collivery = new Collivery;
+// 	   $towns = $this->collivery->getTowns();
+// 
+//        $suburbs = $this->collivery->getSuburbs('147');
+//     }
+
+    public function hookLeftColumn() {
+    
+    echo "heart";
+
+// 		$this->collivery = new Collivery;
+// 		$towns = $this->collivery->getTowns();
+// 		$suburbs = $this->collivery->getSuburbs('147');
+	}
+// 	
 }
 
 
