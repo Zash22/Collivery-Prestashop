@@ -11,11 +11,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'nocache_hash' => '45224972455a5148b860f34-81697699',
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a63dfdd94ee2_22049328',
+  'unifunc' => 'content_55a6be03a54203_46717420',
   'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a63dfdd94ee2_22049328')) {function content_55a63dfdd94ee2_22049328($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55a6be03a54203_46717420')) {function content_55a6be03a54203_46717420($_smarty_tpl) {?>
 <!-- MODULE Block specials -->
 <div id="special_block_right" class="block">
 	<p class="title_block">
@@ -26,28 +26,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="block_content products-block">
     		<ul>
         	<li class="clearfix">
-            	<a class="products-block-image" href="http://localhost/Collivery-Prestashop/index.php?id_product=5&amp;controller=product">
+            	<a class="products-block-image" href="http://localhost/Collivery-Prestashop/index.php?id_product=7&amp;controller=product">
                     <img 
                     class="replace-2x img-responsive" 
-                    src="http://localhost/Collivery-Prestashop/img/p/1/2/12-small_default.jpg" 
+                    src="http://localhost/Collivery-Prestashop/img/p/2/0/20-small_default.jpg" 
                     alt="" 
-                    title="Printed Summer Dress" />
+                    title="Printed Chiffon Dress" />
                 </a>
                 <div class="product-content">
                 	<h5>
-                        <a class="product-name" href="http://localhost/Collivery-Prestashop/index.php?id_product=5&amp;controller=product" title="Printed Summer Dress">
-                            Printed Summer Dress
+                        <a class="product-name" href="http://localhost/Collivery-Prestashop/index.php?id_product=7&amp;controller=product" title="Printed Chiffon Dress">
+                            Printed Chiffon Dress
                         </a>
                     </h5>
                                         	<p class="product-description">
-                            Long printed dress with thin...
+                            Printed chiffon knee length dress...
                         </p>
                                         <div class="price-box">
                     	                        	<span class="price special-price">
-                                                                    28,98 €                            </span>
-                                                                                                                                 <span class="price-percent-reduction">-5%</span>
+                                                                    16,40 €                            </span>
+                                                                                                                                 <span class="price-percent-reduction">-20%</span>
                                                                                          <span class="old-price">
-                                                                    30,51 €                            </span>
+                                                                    20,50 €                            </span>
                             
                                             </div>
                 </div>

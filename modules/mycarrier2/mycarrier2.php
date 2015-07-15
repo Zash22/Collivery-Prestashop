@@ -4,19 +4,32 @@
 if (!defined('_PS_VERSION_'))
 	exit;
 	
-include_once __DIR__."/mds/Collivery.php";
-include_once __DIR__."/mds/Cache.php";
+	
 
-use Mds\Collivery;
-use Mds\Cache;
 
 class mycarrier2 extends CarrierModule
 {
 	public  $id_carrier;
-
 	private $_html = '';
 	private $_postErrors = array();
 	private $_moduleName = 'mycarrier';
+	
+		public static $_this = false;
+	protected $cache;
+	protected $db;
+	protected $towns;
+	protected $services;
+	protected $location_types;
+	protected $extension_id;
+	protected $app_name;
+	protected $app_info;
+	protected $collivery;
+	protected $password;
+	protected $username;
+	protected $converter;
+	protected $risk_cover;
+	protected $email;
+
 
 
 	/*
@@ -61,6 +74,23 @@ class mycarrier2 extends CarrierModule
 			if (count($warning))
 				$this->warning .= implode(' , ',$warning).$this->l('must be configured to use this module correctly').' ';
 		}
+		
+	require_once 'mds/Cache.php';
+		require_once 'mds/Collivery.php';
+
+
+$config = array(
+			'app_name' => $this->app_info->name, // Application Name
+			'app_version' => $this->app_info->version, // Application Version
+// 			'app_host' => 'Joomla: ' . $version->getShortVersion() . ' - Virtuemart: ' . VmConfig::getInstalledVersion(), // Framework/CMS name and version, eg 'Wordpress 3.8.1 WooCommerce 2.0.20' / ''
+// 			'app_url' => JURI::base(), // URL your site is hosted on
+			'user_email' => $this->name.'_email',
+			'user_password' =>$this->name.'_password',
+		);
+$this->collivery = new Mds\Collivery($config);
+
+	
+
 	}
 
 
@@ -435,21 +465,16 @@ class mycarrier2 extends CarrierModule
 		//return 30;
 	}
 	
-//     public function loginToCollivery ( $email, $password ) {
-// 
-// 	   $this->collivery = new Collivery;
-// 	   $towns = $this->collivery->getTowns();
-// 
-//        $suburbs = $this->collivery->getSuburbs('147');
-//     }
+
 
     public function hookLeftColumn() {
     
-    echo "heart";
+
 
 // 		$this->collivery = new Collivery;
-// 		$towns = $this->collivery->getTowns();
-// 		$suburbs = $this->collivery->getSuburbs('147');
+		$towns = $this->collivery->getTowns();
+		$suburbs = $this->collivery->getSuburbs('147');
+// // 		//print_r($suburbs);
 	}
 // 	
 }
