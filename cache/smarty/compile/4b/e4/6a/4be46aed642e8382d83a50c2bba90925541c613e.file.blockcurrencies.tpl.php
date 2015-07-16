@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-14 13:49:34
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-16 14:38:05
          compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/modules/blockcurrencies/blockcurrencies.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:66495811755a5136e9a6439-53986778%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:213644642055a7a5ad73fa01-27617005%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '66495811755a5136e9a6439-53986778',
+  'nocache_hash' => '213644642055a7a5ad73fa01-27617005',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a5136ebe5601_38464600',
+  'unifunc' => 'content_55a7a5ad8f1e44_47336813',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a5136ebe5601_38464600')) {function content_55a5136ebe5601_38464600($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55a7a5ad8f1e44_47336813')) {function content_55a7a5ad8f1e44_47336813($_smarty_tpl) {?>
 <!-- Block currencies module -->
 <?php if (count($_smarty_tpl->tpl_vars['currencies']->value)>1) {?>
 	<div id="currencies-block-top">
@@ -59,7 +59,7 @@ $_smarty_tpl->tpl_vars['f_currency']->_loop = true;
 ?>
 					<?php if (strpos($_smarty_tpl->tpl_vars['f_currency']->value['name'],('(').($_smarty_tpl->tpl_vars['f_currency']->value['iso_code']).(')'))===false) {?>
 						<?php ob_start();?><?php echo smartyTranslate(array('s'=>'%s (%s)','sprintf'=>array($_smarty_tpl->tpl_vars['f_currency']->value['name'],$_smarty_tpl->tpl_vars['f_currency']->value['iso_code'])),$_smarty_tpl);?>
-<?php $_tmp13=ob_get_clean();?><?php $_smarty_tpl->tpl_vars["currency_name"] = new Smarty_variable($_tmp13, null, 0);?>
+<?php $_tmp14=ob_get_clean();?><?php $_smarty_tpl->tpl_vars["currency_name"] = new Smarty_variable($_tmp14, null, 0);?>
 					<?php } else { ?>
 						<?php $_smarty_tpl->tpl_vars["currency_name"] = new Smarty_variable($_smarty_tpl->tpl_vars['f_currency']->value['name'], null, 0);?>
 					<?php }?>

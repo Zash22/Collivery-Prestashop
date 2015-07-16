@@ -112,7 +112,7 @@
                                                                                 {convertPrice price=$option.total_price_without_tax}
                                                                             {/if}
                                                                         {else}
-                                                                            {l s='Free'}
+                                                                          
                                                                         {/if}
                                                                     </div>
                                                                 </td>

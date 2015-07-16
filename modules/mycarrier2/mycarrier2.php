@@ -4,7 +4,6 @@
 if (!defined('_PS_VERSION_'))
 	exit;
 	
-	
 
 
 class mycarrier2 extends CarrierModule
@@ -12,7 +11,7 @@ class mycarrier2 extends CarrierModule
 	public  $id_carrier;
 	private $_html = '';
 	private $_postErrors = array();
-	private $_moduleName = 'mycarrier';
+	private $_moduleName = 'mycarrier2';
 	
 		public static $_this = false;
 	protected $cache;
@@ -76,7 +75,7 @@ class mycarrier2 extends CarrierModule
 		}
 		
 	require_once 'mds/Cache.php';
-		require_once 'mds/Collivery.php';
+	require_once 'mds/Collivery.php';
 
 
 $config = array(
@@ -118,7 +117,7 @@ $this->collivery = new Mds\Collivery($config);
 				'id_zone' => 1,
 				'is_module' => true,
 				'shipping_external' => true,
-				'external_module_name' => 'mycarrier',
+				'external_module_name' => 'mycarrier2',
 				'need_range' => true
 			),
 			1 => array('name' => 'Overnight before 16:00',
@@ -132,7 +131,7 @@ $this->collivery = new Mds\Collivery($config);
 				'id_zone' => 1,
 				'is_module' => true,
 				'shipping_external' => true,
-				'external_module_name' => 'mycarrier',
+				'external_module_name' => 'mycarrier2',
 				'need_range' => true
 			),
 			2 => array('name' => 'Road Freight',
@@ -146,7 +145,7 @@ $this->collivery = new Mds\Collivery($config);
 				'id_zone' => 1,
 				'is_module' => true,
 				'shipping_external' => true,
-				'external_module_name' => 'mycarrier',
+				'external_module_name' => 'mycarrier2',
 				'need_range' => true
 			),
 			3 => array('name' => 'Road Freight Express',
@@ -160,7 +159,7 @@ $this->collivery = new Mds\Collivery($config);
 				'id_zone' => 1,
 				'is_module' => true,
 				'shipping_external' => true,
-				'external_module_name' => 'mycarrier',
+				'external_module_name' => 'mycarrier2',
 				'need_range' => true
 			),
 		);
@@ -386,15 +385,19 @@ $this->collivery = new Mds\Collivery($config);
 	{
 			$email = Tools::getValue('your_email'); //nj
             $password = Tools::getValue('your_password'); //nj
+            
+            
+
             // Saving new configurations
 		
 		
 		if (Configuration::updateValue('MYCARRIER1_OVERCOST', Tools::getValue('mycarrier1_overcost')) &&
+			Configuration::updateValue('MYCARRIER1_OVERCOST', Tools::getValue('mycarrier1_overcost')) &&
 		    Configuration::updateValue('MYCARRIER2_OVERCOST', Tools::getValue('mycarrier2_overcost')) &&
 		    Configuration::updateValue('MYCARRIER3_OVERCOST', Tools::getValue('mycarrier3_overcost')) &&
 		    Configuration::updateValue('MYCARRIER4_OVERCOST', Tools::getValue('mycarrier4_overcost')) &&
 		    Configuration::updateValue($this->name.'_email', $email) && //nj
-			Configuration::updateValue($this->name.'_password', $password))//nj
+			Configuration::updateValue($this->name.'_password', $password))
 			$this->_html .= $this->displayConfirmation($this->l('Settings updated'));
 		else
 			$this->_html .= $this->displayErrors($this->l('Settings failed'));
@@ -436,23 +439,61 @@ $this->collivery = new Mds\Collivery($config);
 	
 	public function getOrderShippingCost($params, $shipping_cost)
 	{
-	
+				//print_r($params);
+				//print_r($this->id_carrier);
+				
+					//echo Configuration::get('MYCARRIER2_CARRIER_ID') . "<br>";
+
+// 				if ($this->id_carrier == ((Configuration::get('MYCARRIER1_CARRIER_ID'))|| 1))//NJ
+// 					return (Tools::getValue('mycarrier1_overcost', Configuration::get('MYCARRIER1_OVERCOST')));
+// 					die('5');
+// 					
+// 				elseif ($this->id_carrier == ((Configuration::get('MYCARRIER2_CARRIER_ID'))|| 2))
+// 					return (float)(Configuration::get('MYCARRIER2_OVERCOST'));
+// 					return (Tools::getValue('mycarrier2_overcost', Configuration::get('MYCARRIER2_OVERCOST')));
+// 				
+// 				elseif ($this->id_carrier == (int)(Configuration::get('MYCARRIER3_CARRIER_ID')))
+// 					return (float)(Configuration::get('MYCARRIER3_OVERCOST'));
+// 							
+// 				elseif ($this->id_carrier == (int)(Configuration::get('MYCARRIER4_CARRIER_ID')))
+// 					return (float)(Configuration::get('MYCARRIER4_OVERCOST'));
+
+				$id = $this->id_carrier;
+				
+				//echo $id . "<br>";
+
+				switch ($id) {
+					case '52':
+					return 4;
+						//die('5');
+						break;
+					case '53':
+					return 5;
+						
+						break;
+					case '54':
+					return 6;
+						
+						break;
+					case '55':
+					return 8;
+						
+						break;
+				
+					default:
+ 						return  False;
+ 				}
 
 
-				if ($this->id_carrier == (int)(Configuration::get('MYCARRIER1_CARRIER_ID')) && Configuration::get('MYCARRIER1_OVERCOST') > 1)
-			//return (float)(Configuration::get('MYCARRIER1_OVERCOST'));
-							if ($this->id_carrier == (int)(Configuration::get('MYCARRIER2_CARRIER_ID')) && Configuration::get('MYCARRIER2_OVERCOST') > 1)
-			return (float)(Configuration::get('MYCARRIER2_OVERCOST'));
-							if ($this->id_carrier == (int)(Configuration::get('MYCARRIER3_CARRIER_ID')) && Configuration::get('MYCARRIER3_OVERCOST') > 1)
-			return (float)(Configuration::get('MYCARRIER3_OVERCOST'));
-							if ($this->id_carrier == (int)(Configuration::get('MYCARRIER4_CARRIER_ID')) && Configuration::get('MYCARRIER4_OVERCOST') > 1)
-			return (float)(Configuration::get('MYCARRIER4_OVERCOST'));
+
+				
 			
-		return 20;
 	}
 	
 	public function getOrderShippingCostExternal($params)
 	{
+	//print_r($params);
+		//print_r(Configuration::get('MYCARRIER3_OVERCOST'));
 		// This example returns the overcost directly, but you can call a webservice or calculate what you want before returning the final value to the Cart
 		if ($this->id_carrier == (int)(Configuration::get('MYCARRIER1_CARRIER_ID')) )
 			return (float)(Configuration::get('MYCARRIER1_OVERCOST'));
@@ -462,7 +503,7 @@ $this->collivery = new Mds\Collivery($config);
 			return 21;
 
 		// If the carrier is not known, you can return false, the carrier won't appear in the order process
-		//return 30;
+		return 30;
 	}
 	
 
@@ -474,7 +515,7 @@ $this->collivery = new Mds\Collivery($config);
 // 		$this->collivery = new Collivery;
 		$towns = $this->collivery->getTowns();
 		$suburbs = $this->collivery->getSuburbs('147');
-// // 		//print_r($suburbs);
+		//print_r($suburbs);
 	}
 // 	
 }
