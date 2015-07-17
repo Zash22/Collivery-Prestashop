@@ -3,14 +3,29 @@
 // Avoid direct access to the file
 if (!defined('_PS_VERSION_'))
 	exit;
-
+	
 class mds extends CarrierModule
 {
 	public  $id_carrier;
 	private $_html = '';
 	private $_postErrors = array();
 	private $_moduleName = 'mds';
-
+	public static $_this = false;
+	protected $cache;
+	protected $db;
+	protected $towns;
+	protected $services;
+	protected $location_types;
+	protected $extension_id;
+	protected $app_name;
+	protected $app_info;
+	protected $collivery;
+	protected $password;
+	protected $username;
+	protected $converter;
+	protected $risk_cover;
+	protected $email;
+	//public $colliveryCost;
 
 	/*
 	** Construct Method
@@ -23,12 +38,12 @@ class mds extends CarrierModule
 		$this->tab = 'shipping_logistics';
 		$this->version = '1.0';
 		$this->author = 'Nicole Johnson';
-	//	$this->limited_countries = array('za');
+		$this->limited_countries = array();
 
 		parent::__construct ();
 
-		$this->displayName = $this->l('MDS Shipping');
-		$this->description = $this->l('MDS courier integration');
+		$this->displayName = $this->l('Mds Shipping');
+		$this->description = $this->l('Offer your customers, different delivery methods that you want');
 
 		if (self::isInstalled($this->name))
 		{
@@ -54,6 +69,21 @@ class mds extends CarrierModule
 			if (count($warning))
 				$this->warning .= implode(' , ',$warning).$this->l('must be configured to use this module correctly').' ';
 		}
+	
+				require_once 'helperClasses/MdsColliveryService.php';
+		
+				//die('5');
+				$this->mdsService = \helperClasses\MdsColliveryService::getInstance();
+				//die('4');
+				//$this->mdsService = MdsColliveryService::getInstance();
+			
+				$this->collivery = $this->mdsService->returnColliveryClass();
+				
+// 				$this->collivery->getTowns();
+// 				die(print_r($this->collivery->getTowns()));
+				
+				
+
 	}
 
 
@@ -61,46 +91,86 @@ class mds extends CarrierModule
 	** Install / Uninstall Methods
 	**
 	*/
+	
 
 	public function install()
 	{
 		$carrierConfig = array(
-			0 => array('name' => 'MDS Road Freight',
+			0 => array('name' => 'Overnight before 10:00',
 				'id_tax_rules_group' => 0,
+// 				'MYCARRIER1_CARRIER_ID' => '1',
 				'active' => true,
 				'deleted' => 0,
 				'shipping_handling' => false,
 				'range_behavior' => 0,
-				'delay' => array('fr' => 'Description 1', 'en' => 'MDS Road Freight', Language::getIsoById(Configuration::get('PS_LANG_DEFAULT')) => 'MDS Road Freight'),
+				'delay' => array('fr' => 'Description 1', 'en' => 'Description 1', Language::getIsoById(Configuration::get('PS_LANG_DEFAULT')) => 'Description 1'),
 				'id_zone' => 1,
 				'is_module' => true,
 				'shipping_external' => true,
-				'external_module_name' => 'mds_1',
+				'external_module_name' => 'mds',
 				'need_range' => true
 			),
-			1 => array('name' => 'MDS Road Freight Express',
+			1 => array('name' => 'Overnight before 16:00',
 				'id_tax_rules_group' => 0,
+// 				'MYCARRIER2_CARRIER_ID' => '2',
 				'active' => true,
 				'deleted' => 0,
 				'shipping_handling' => false,
 				'range_behavior' => 0,
-				'delay' => array('fr' => 'Description 2', 'en' => 'MDS Road Freight Express', Language::getIsoById(Configuration::get('PS_LANG_DEFAULT')) => 'MDS Road Freight Express'),
+				'delay' => array('fr' => 'Description 2', 'en' => 'Description 2', Language::getIsoById(Configuration::get('PS_LANG_DEFAULT')) => 'Description 2'),
 				'id_zone' => 1,
 				'is_module' => true,
 				'shipping_external' => true,
-				'external_module_name' => 'mds_2',
+				'external_module_name' => 'mds',
 				'need_range' => true
 			),
- 		);
+			2 => array('name' => 'Road Freight',
+				'id_tax_rules_group' => 0,
+// 				'MYCARRIER3_CARRIER_ID' => '3',
+				'active' => true,
+				'deleted' => 0,
+				'shipping_handling' => false,
+				'range_behavior' => 0,
+				'delay' => array('fr' => 'Description 2', 'en' => 'Description 2', Language::getIsoById(Configuration::get('PS_LANG_DEFAULT')) => 'Description 2'),
+				'id_zone' => 1,
+				'is_module' => true,
+				'shipping_external' => true,
+				'external_module_name' => 'mds',
+				'need_range' => true
+			),
+			3 => array('name' => 'Road Freight Express',
+				'id_tax_rules_group' => 0,
+// 				'MYCARRIER4_CARRIER_ID' => '5',
+				'active' => true,
+				'deleted' => 0,
+				'shipping_handling' => false,
+				'range_behavior' => 0,
+				'delay' => array('fr' => 'Description 2', 'en' => 'Description 2', Language::getIsoById(Configuration::get('PS_LANG_DEFAULT')) => 'Description 2'),
+				'id_zone' => 1,
+				'is_module' => true,
+				'shipping_external' => true,
+				'external_module_name' => 'mds',
+				'need_range' => true
+			),
+		);
 
 		$id_carrier1 = $this->installExternalCarrier($carrierConfig[0]);
 		$id_carrier2 = $this->installExternalCarrier($carrierConfig[1]);
-		Configuration::updateValue('MYCARRIER1_CARRIER_ID', (int)$id_carrier1);
-		Configuration::updateValue('MYCARRIER2_CARRIER_ID', (int)$id_carrier2);
+		$id_carrier3 = $this->installExternalCarrier($carrierConfig[2]);
+		$id_carrier4 = $this->installExternalCarrier($carrierConfig[3]);
+            
+		Configuration::updateValue('MYCARRIER1_CARRIER_ID', '1');
+		Configuration::updateValue('MYCARRIER2_CARRIER_ID', '2');
+		Configuration::updateValue('MYCARRIER3_CARRIER_ID', '3');
+		Configuration::updateValue('MYCARRIER4_CARRIER_ID', '5');
+
 		if (!parent::install() ||
 		    !Configuration::updateValue('MYCARRIER1_OVERCOST', '') ||
 		    !Configuration::updateValue('MYCARRIER2_OVERCOST', '') ||
-		    !$this->registerHook('updateCarrier'))
+		    !Configuration::updateValue('MYCARRIER3_OVERCOST', '') ||
+		    !Configuration::updateValue('MYCARRIER4_OVERCOST', '') ||
+		    !$this->registerHook('updateCarrier') ||
+		    !$this-> registerHook('leftColumn')) 
 			return false;
 		return true;
 	}
@@ -110,16 +180,25 @@ class mds extends CarrierModule
 		// Uninstall
 		if (!parent::uninstall() ||
 		    !Configuration::deleteByName('MYCARRIER1_OVERCOST') ||
-		   !Configuration::deleteByName('MYCARRIER2_OVERCOST') ||
-		    !$this->unregisterHook('updateCarrier'))
+		    !Configuration::deleteByName('MYCARRIER2_OVERCOST') ||
+		    !Configuration::deleteByName('MYCARRIER3_OVERCOST') ||
+		    !Configuration::deleteByName('MYCARRIER4_OVERCOST') ||
+		   
+		    
+		    !$this->unregisterHook('updateCarrier') ||
+		    !$this->unregisterHook('leftColumn'))
 			return false;
 		
 		// Delete External Carrier
 		$Carrier1 = new Carrier((int)(Configuration::get('MYCARRIER1_CARRIER_ID')));
 		$Carrier2 = new Carrier((int)(Configuration::get('MYCARRIER2_CARRIER_ID')));
+		$Carrier3 = new Carrier((int)(Configuration::get('MYCARRIER3_CARRIER_ID')));
+		$Carrier4 = new Carrier((int)(Configuration::get('MYCARRIER4_CARRIER_ID')));
+
+
 
 		// If external carrier is default set other one as default
-		if (Configuration::get('PS_CARRIER_DEFAULT') == (int)($Carrier1->id) || Configuration::get('PS_CARRIER_DEFAULT') == (int)($Carrier2->id))
+		if (Configuration::get('PS_CARRIER_DEFAULT') == (int)($Carrier1->id) || Configuration::get('PS_CARRIER_DEFAULT') == (int)($Carrier2->id) ||Configuration::get('PS_CARRIER_DEFAULT') == (int)($Carrier3->id) || Configuration::get('PS_CARRIER_DEFAULT') == (int)($Carrier3->id) || Configuration::get('PS_CARRIER_DEFAULT') == (int)($Carrier4->id))
 		{
 			global $cookie;
 			$carriersD = Carrier::getCarriers($cookie->id_lang, true, false, false, NULL, PS_CARRIERS_AND_CARRIER_MODULES_NEED_RANGE);
@@ -131,12 +210,15 @@ class mds extends CarrierModule
 		// Then delete Carrier
 		$Carrier1->deleted = 1;
 		$Carrier2->deleted = 1;
-		if (!$Carrier1->update() || !$Carrier2->update())
+		$Carrier3->deleted = 1;
+		$Carrier4->deleted = 1;
+		if (!$Carrier1->update() || !$Carrier2->update() ||  !$Carrier3->update() ||  !$Carrier4->update())
 			return false;
 
 		return true;
 	}
-
+	
+	//name =[express => 1, normal => 2, road =>5]
 	public static function installExternalCarrier($config)
 	{
 		$carrier = new Carrier();
@@ -211,7 +293,7 @@ class mds extends CarrierModule
 
 	public function getContent()
 	{
-		$this->_html .= '<h2>' . $this->l('MDS Shipping').'</h2>';
+		$this->_html .= '<h2>' . $this->l('My Carrier').'</h2>';
 		if (!empty($_POST) AND Tools::isSubmit('submitSave'))
 		{
 			$this->_postValidation();
@@ -235,6 +317,10 @@ class mds extends CarrierModule
 			$alert['carrier1'] = 1;
 		if (!Configuration::get('MYCARRIER2_OVERCOST') || Configuration::get('MYCARRIER2_OVERCOST') == '')
 			$alert['carrier2'] = 1;
+		if (!Configuration::get('MYCARRIER3_OVERCOST') || Configuration::get('MYCARRIER3_OVERCOST') == '')
+			$alert['carrier3'] = 1;
+		if (!Configuration::get('MYCARRIER4_OVERCOST') || Configuration::get('MYCARRIER4_OVERCOST') == '')
+			$alert['carrier4'] = 1;
 
 		if (!count($alert))
 			$this->_html .= '<img src="'._PS_IMG_.'admin/module_install.png" /><strong>'.$this->l('My Carrier is configured and online!').'</strong>';
@@ -256,12 +342,22 @@ class mds extends CarrierModule
 
 					<fieldset style="border: 0px;">
 						<h4>'.$this->l('General configuration').' :</h4>
-						<label>'.$this->l('MDS Road Freight').' : </label>
+						<label>'.$this->l('Overnight before 10:00').' : </label>
 						<div class="margin-form"><input type="text" size="20" name="mycarrier1_overcost" value="'.Tools::getValue('mycarrier1_overcost', Configuration::get('MYCARRIER1_OVERCOST')).'" /></div>
-						<label>'.$this->l('MDS Road Freight Express').' : </label>
+						<label>'.$this->l('Overnight before 16:00').' : </label>
 						<div class="margin-form"><input type="text" size="20" name="mycarrier2_overcost" value="'.Tools::getValue('mycarrier2_overcost', Configuration::get('MYCARRIER2_OVERCOST')).'" /></div>
+						<label>'.$this->l('Road Freight Express').' : </label>
+						<div class="margin-form"><input type="text" size="20" name="mycarrier3_overcost" value="'.Tools::getValue('mycarrier3_overcost', Configuration::get('MYCARRIER3_OVERCOST')).'" /></div>
+						<label>'.$this->l('Road Freight').' : </label>
+						<div class="margin-form"><input type="text" size="20" name="mycarrier4_overcost" value="'.Tools::getValue('mycarrier4_overcost', Configuration::get('MYCARRIER4_OVERCOST')).'" /></div>
+						<label>'.$this->l('MDS account email').'</label>
+						<div class="margin-form"><input type="text" name="your_email" value="'. Tools::getValue('your_email') . '"  /></div>
+						<label>'.$this->l('MDS account password').'</label>
+						<div class="margin-form"><input type="text" name="your_password" value="'. Tools::getValue('your_password') . '" /></div>
+						<label>'.$this->l('MDS risk cover').'</label>
+						<div class="margin-form"><input type="checkbox" name="your_riskcover" /></div>
 					</div>
-					<br /><br />
+				<br /><br />
 				</fieldset>				
 				<div class="margin-form"><input class="button" name="submitSave" type="submit"></div>
 			</form>
@@ -271,15 +367,27 @@ class mds extends CarrierModule
 	private function _postValidation()
 	{
 		// Check configuration values
-		if (Tools::getValue('mycarrier1_overcost') == '' && Tools::getValue('mycarrier2_overcost') == '')
+		if (Tools::getValue('mycarrier1_overcost') == '' && Tools::getValue('mycarrier2_overcost') == '' && Tools::getValue('mycarrier3_overcost') == '' && Tools::getValue('mycarrier4_overcost') == '')
 			$this->_postErrors[]  = $this->l('You have to configure at least one carrier');
 	}
 
 	private function _postProcess()
 	{
-		// Saving new configurations
+			$email = Tools::getValue('your_email'); //nj
+            $password = Tools::getValue('your_password'); //nj
+            
+            
+
+            // Saving new configurations
+		
+		
 		if (Configuration::updateValue('MYCARRIER1_OVERCOST', Tools::getValue('mycarrier1_overcost')) &&
-		    Configuration::updateValue('MYCARRIER2_OVERCOST', Tools::getValue('mycarrier2_overcost')))
+			Configuration::updateValue('MYCARRIER1_OVERCOST', Tools::getValue('mycarrier1_overcost')) &&
+		    Configuration::updateValue('MYCARRIER2_OVERCOST', Tools::getValue('mycarrier2_overcost')) &&
+		    Configuration::updateValue('MYCARRIER3_OVERCOST', Tools::getValue('mycarrier3_overcost')) &&
+		    Configuration::updateValue('MYCARRIER4_OVERCOST', Tools::getValue('mycarrier4_overcost')) &&
+		    Configuration::updateValue($this->name.'_email', $email) && //nj
+			Configuration::updateValue($this->name.'_password', $password))
 			$this->_html .= $this->displayConfirmation($this->l('Settings updated'));
 		else
 			$this->_html .= $this->displayErrors($this->l('Settings failed'));
@@ -297,10 +405,11 @@ class mds extends CarrierModule
 			Configuration::updateValue('MYCARRIER1_CARRIER_ID', (int)($params['carrier']->id));
 		if ((int)($params['id_carrier']) == (int)(Configuration::get('MYCARRIER2_CARRIER_ID')))
 			Configuration::updateValue('MYCARRIER2_CARRIER_ID', (int)($params['carrier']->id));
+		if ((int)($params['id_carrier']) == (int)(Configuration::get('MYCARRIER3_CARRIER_ID')))
+			Configuration::updateValue('MYCARRIER3_CARRIER_ID', (int)($params['carrier']->id));
+		if ((int)($params['id_carrier']) == (int)(Configuration::get('MYCARRIER4_CARRIER_ID')))
+			Configuration::updateValue('MYCARRIER4_CARRIER_ID', (int)($params['carrier']->id));
 	}
-
-
-
 
 	/*
 	** Front Methods
@@ -312,39 +421,171 @@ class mds extends CarrierModule
 	** $shipping_cost var contains the price calculated by the range in carrier tab
 	**
 	*/
+	public function getColliveryQuote(/*$orderParams*/){
+	
+		$colliveryData = Array
+		(
+			'collivery_from' => '1190306',
+            'contact_from' => '1232622',
+            'collivery_to' => '1223084',
+            'contact_to' => '1267157',
+			'collivery_type'=> '2',
+			'weight' => '6',
+			'service' => '5',
+			'cover' => 'true',
+			'parcels' => Array
+					( 
+						'0' => Array
+								(
+									'weight' => '2',
+									'height' => '10',
+									'length' => '12',
+									'width' => '7'
+								),
+						'1' => Array
+								(
+									'weight' => '4',
+									'height' => '3',
+									'length' => '17',
+									'width' => '19'
+								)
+					)
+		);
+		
+		$validateCollivery = $this->collivery->validate($colliveryData);
+		
+		if ($validateCollivery){
+	// 		echo "Validate Collivery Results<pre>";
+	// 		print_r($validateCollivery);
+	// 		echo "</pre>";
+			
+			if ($addedCollivery = $this->collivery->addCollivery($validateCollivery)) {
+	// 			echo "Added Collivery Results<pre>";
+	// 			print_r($addedCollivery);
+	// 			echo "</pre>";
+				$colliveryStatus = $this->collivery->getStatus($addedCollivery);
+				if ($colliveryStatus) {
+				//echo "Collivery Status<pre>";
+				//print_r($colliveryStatus);
+				//echo $colliveryStatus[total_price];
+				//echo "</pre>";
+// 				$colliveryCost = $colliveryStatus[total_price];
+// 				return $colliveryCost;
+				return $colliveryStatus[total_price];
+				
+				}
+			}
+		}	
+		else {
+			echo "Errors<pre>";
+			print_r($this->collivery->getErrors());
+			echo "</pre>";
+		}
+	}
+
 	
 	public function getOrderShippingCost($params, $shipping_cost)
 	{
-		// This example returns shipping cost with overcost set in the back-office, but you can call a webservice or calculate what you want before returning the final value to the Cart
-		if ($this->id_carrier == (int)(Configuration::get('MYCARRIER1_CARRIER_ID')) && Configuration::get('MYCARRIER1_OVERCOST') > 1)
-			return (float)(Configuration::get('MYCARRIER1_OVERCOST'));
+			$price = 100;
+			$markup = 2;
+			
+			return $this->mdsService->addMarkup($price, $markup);
+			
+			//echo $result;
+			
+			
+	
+		//$colliveryCost = $this->getColliveryQuote();
+				//print_r($id_carrier_list);
+				//print_r($params);
+				//print_r($this->id_carrier);
+				//echo Configuration::get('MYCARRIER2_CARRIER_ID') . "<br>";
+// 				if ($this->id_carrier == ((Configuration::get('MYCARRIER1_CARRIER_ID'))|| 1))//NJ
+// 					return (Tools::getValue('mycarrier1_overcost', Configuration::get('MYCARRIER1_OVERCOST')));
+// 					die('5');
+// 					
+// 				elseif ($this->id_carrier == ((Configuration::get('MYCARRIER2_CARRIER_ID'))|| 2))
+// 					return (float)(Configuration::get('MYCARRIER2_OVERCOST'));
+// 					return (Tools::getValue('mycarrier2_overcost', Configuration::get('MYCARRIER2_OVERCOST')));
+// 				
+// 				elseif ($this->id_carrier == (int)(Configuration::get('MYCARRIER3_CARRIER_ID')))
+// 					return (float)(Configuration::get('MYCARRIER3_OVERCOST'));
+// 							
+// 				elseif ($this->id_carrier == (int)(Configuration::get('MYCARRIER4_CARRIER_ID')))
+// 					return (float)(Configuration::get('MYCARRIER4_OVERCOST'));
 
+				$ids= $this->id_carrier;
+				
+// 				foreach ($ids as $id )
+// 				{
+// 					if (Configuration::get('MYCARRIER1_CARRIER_ID') == 1)//NJ
+// 						return (Tools::getValue('mycarrier1_overcost', Configuration::get('MYCARRIER1_OVERCOST')));
+// 					
+// 					if (Configuration::get('MYCARRIER2_CARRIER_ID') ==2)
+// 						return (Tools::getValue('mycarrier2_overcost', Configuration::get('MYCARRIER2_OVERCOST')));
+// 							
+// 					if (Configuration::get('MYCARRIER3_CARRIER_ID') == 3)
+// 						return (float)(Configuration::get('MYCARRIER3_OVERCOST'));
+// 								
+// 					if (Configuration::get('MYCARRIER4_CARRIER_ID') ==5)					
+// 						return (float)(Configuration::get('MYCARRIER4_OVERCOST'));
+// 				}
 
+				switch ($ids) {
+					case '52':
+						$totalShipping = (float)(Configuration::get('MYCARRIER1_OVERCOST')) + $colliveryCost;
+						return $totalShipping;
+						break;
+						
+					case '53':
+						$totalShipping = (float)(Configuration::get('MYCARRIER2_OVERCOST')) + $colliveryCost;
+						return $totalShipping;
+						break;
+						
+					case '54':
+						$totalShipping = (float)(Configuration::get('MYCARRIER3_OVERCOST')) + $colliveryCost;
+						return $totalShipping;
+						break;
+						
+					case '55':
+						$totalShipping = (float)(Configuration::get('MYCARRIER4_OVERCOST')) + $colliveryCost;
+						return $totalShipping;
+						break;
+						
+					default:
+ 						return  False;
+ 				}
 
-	//return 90000;
-
-
-
-
-		// If the carrier is not known, you can return false, the carrier won't appear in the order process
-		//return false;
+// 				if ($this->id_carrier)
+// 				{
+// 					if (Configuration::get('MYCARRIER1_CARRIER_ID') == 1)//NJ
+// 						return (Tools::getValue('mycarrier1_overcost', Configuration::get('MYCARRIER1_OVERCOST')));
+// 					
+// 					if (Configuration::get('MYCARRIER2_CARRIER_ID') ==2)
+// 						return (Tools::getValue('mycarrier2_overcost', Configuration::get('MYCARRIER2_OVERCOST')));
+// 							
+// 					if (Configuration::get('MYCARRIER3_CARRIER_ID') == 3)
+// 						return (float)(Configuration::get('MYCARRIER3_OVERCOST'));
+// 								
+// 					if (Configuration::get('MYCARRIER2_CARRIER_ID') ==5)					
+// 						return (float)(Configuration::get('MYCARRIER4_OVERCOST'));
+// 				}
+// 				
+// 				return False;
+		
 	}
 	
 	public function getOrderShippingCostExternal($params)
 	{
-		// This example returns the overcost directly, but you can call a webservice or calculate what you want before returning the final value to the Cart
-		
-		if ($this->id_carrier == (int)(Configuration::get('MYCARRIER1_CARRIER_ID')) && Configuration::get('MYCARRIER1_OVERCOST') > 1)
-			return (float)(Configuration::get('MYCARRIER1_OVERCOST'));
-
-
-		// If the carrier is not known, you can return false, the carrier won't appear in the order process
-// 		die ($params);
-// 		
-// 		return 800;
-
-
-		//return false;
+		return False;
+	}
+	
+    public function hookLeftColumn() {
+    
+// 		$this->collivery = new Collivery;
+// 		$towns = $this->collivery->getTowns();
+// 		$suburbs = $this->collivery->getSuburbs('147');
+	//	print_r($suburbs);
 	}
 	
 }
