@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-16 16:13:00
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-17 21:12:13
          compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/product-list-colors.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:73522185055a7bbece86545-89767989%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2049467655a9538dd610c8-39102775%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '73522185055a7bbece86545-89767989',
+  'nocache_hash' => '2049467655a9538dd610c8-39102775',
   'function' => 
   array (
   ),
@@ -26,9 +26,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a7bbed183732_37458032',
+  'unifunc' => 'content_55a9538e166162_78017776',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a7bbed183732_37458032')) {function content_55a7bbed183732_37458032($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55a9538e166162_78017776')) {function content_55a9538e166162_78017776($_smarty_tpl) {?>
 <?php if (isset($_smarty_tpl->tpl_vars['colors_list']->value)) {?>
 <ul class="color_to_pick_list clearfix">
 	<?php  $_smarty_tpl->tpl_vars['color'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['color']->_loop = false;

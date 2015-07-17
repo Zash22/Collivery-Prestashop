@@ -69,27 +69,20 @@ class mycarrier2 extends CarrierModule
 			if (count($warning))
 				$this->warning .= implode(' , ',$warning).$this->l('must be configured to use this module correctly').' ';
 		}
-		
-	require_once 'mds/Cache.php';
-	require_once 'mds/Collivery.php';
-
-
-$config = array(
-			'app_name' => $this->app_info->name, // Application Name
-			'app_version' => $this->app_info->version, // Application Version
-// 			'app_host' => 'Joomla: ' . $version->getShortVersion() . ' - Virtuemart: ' . VmConfig::getInstalledVersion(), // Framework/CMS name and version, eg 'Wordpress 3.8.1 WooCommerce 2.0.20' / ''
-// 			'app_url' => JURI::base(), // URL your site is hosted on
-			//'user_email' => $this->name.'_email',
-				//'user_email' => Tools::getValue('your_email'),
-								'user_email' => 'api@collivery.co.za',
-
-			//'user_password' =>$this->name.'_password',
-// 			'user_password' =>Tools::getValue('your_password'),
-'user_password' =>'api123',
-		);
-$this->collivery = new Mds\Collivery($config);
-
 	
+				require_once 'helperClasses/MdsColliveryService.php';
+		
+				//die('5');
+				$this->mdsService = \helperClasses\MdsColliveryService::getInstance();
+				//die('4');
+				//$this->mdsService = MdsColliveryService::getInstance();
+			
+				$this->collivery = $this->mdsService->returnColliveryClass();
+				
+// 				$this->collivery->getTowns();
+// 				die(print_r($this->collivery->getTowns()));
+				
+				
 
 	}
 
@@ -465,8 +458,8 @@ $this->collivery = new Mds\Collivery($config);
 	// 		echo "Validate Collivery Results<pre>";
 	// 		print_r($validateCollivery);
 	// 		echo "</pre>";
-			$addedCollivery = $this->collivery->addCollivery($validateCollivery);
-			if ($addedCollivery) {
+			
+			if ($addedCollivery = $this->collivery->addCollivery($validateCollivery)) {
 	// 			echo "Added Collivery Results<pre>";
 	// 			print_r($addedCollivery);
 	// 			echo "</pre>";
@@ -493,8 +486,16 @@ $this->collivery = new Mds\Collivery($config);
 	
 	public function getOrderShippingCost($params, $shipping_cost)
 	{
+			$price = 100;
+			$markup = 2;
+			
+			return $this->mdsService->addMarkup($price, $markup);
+			
+			//echo $result;
+			
+			
 	
-		$colliveryCost = $this->getColliveryQuote();
+		//$colliveryCost = $this->getColliveryQuote();
 				//print_r($id_carrier_list);
 				//print_r($params);
 				//print_r($this->id_carrier);
@@ -582,9 +583,9 @@ $this->collivery = new Mds\Collivery($config);
     public function hookLeftColumn() {
     
 // 		$this->collivery = new Collivery;
-		$towns = $this->collivery->getTowns();
-		$suburbs = $this->collivery->getSuburbs('147');
-		print_r($suburbs);
+// 		$towns = $this->collivery->getTowns();
+// 		$suburbs = $this->collivery->getSuburbs('147');
+	//	print_r($suburbs);
 	}
 	
 }
