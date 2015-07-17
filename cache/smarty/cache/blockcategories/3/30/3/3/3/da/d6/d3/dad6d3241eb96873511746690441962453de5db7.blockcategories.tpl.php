@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:151925310955a957468dfbf9-73453935%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:102108138055a96845aa3451-18311810%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -15,20 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '151925310955a957468dfbf9-73453935',
-  'variables' => 
-  array (
-    'blockCategTree' => 0,
-    'currentCategory' => 0,
-    'isDhtml' => 0,
-    'child' => 0,
-  ),
-  'has_nocache_code' => false,
+  'nocache_hash' => '102108138055a96845aa3451-18311810',
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a95746a48ad7_18336837',
+  'unifunc' => 'content_55a96902b62384_96339373',
+  'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a95746a48ad7_18336837')) {function content_55a95746a48ad7_18336837($_smarty_tpl) {?><!-- Block categories module -->
+<?php if ($_valid && !is_callable('content_55a96902b62384_96339373')) {function content_55a96902b62384_96339373($_smarty_tpl) {?><!-- Block categories module -->
 <div id="categories_block_left" class="block">
 	<h2 class="title_block">
 					Women

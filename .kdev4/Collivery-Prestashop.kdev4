@@ -13,7 +13,7 @@ Type=Script Application
 [Launch][Launch Configuration 0][Data]
 Arguments=
 EnvironmentGroup=default
-Executable=file:///var/www/html/Collivery-Prestashop/modules/mycarrier2/mycarrier2.php
+Executable=file:///var/www/html/Collivery-Prestashop/modules/mds/mds.php
 Execute on Remote Host=false
 Interpreter=php
 Output Filtering Mode=0

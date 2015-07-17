@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:122442749855a9572ee69be8-48148438%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:16335960555a968363b0ed4-47893706%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -9,13 +9,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '122442749855a9572ee69be8-48148438',
+  'nocache_hash' => '16335960555a968363b0ed4-47893706',
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a95733cc2046_54070484',
+  'unifunc' => 'content_55a96843d00ad4_55254173',
   'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a95733cc2046_54070484')) {function content_55a95733cc2046_54070484($_smarty_tpl) {?><!-- Block search module TOP -->
+<?php if ($_valid && !is_callable('content_55a96843d00ad4_55254173')) {function content_55a96843d00ad4_55254173($_smarty_tpl) {?><!-- Block search module TOP -->
 <div id="search_block_top" class="col-sm-4 clearfix">
 	<form id="searchbox" method="get" action="//localhost/Collivery-Prestashop/index.php?controller=search" >
 		<input type="hidden" name="controller" value="search" />

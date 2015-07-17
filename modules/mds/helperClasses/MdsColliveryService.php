@@ -34,7 +34,7 @@ class MdsColliveryService
 	/**
 	 * @type
 	 */
-	var $WC_MDS_Collivery;
+//	var $WC_MDS_Collivery;
 
 	/**
 	 * @param null $settings

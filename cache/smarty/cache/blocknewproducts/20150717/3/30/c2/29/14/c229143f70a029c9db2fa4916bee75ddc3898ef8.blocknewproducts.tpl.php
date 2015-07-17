@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:6180435855a95748ac0006-44582244%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:194667388655a96847700d83-16608048%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -9,7 +9,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6180435855a95748ac0006-44582244',
+  'nocache_hash' => '194667388655a96847700d83-16608048',
   'variables' => 
   array (
     'link' => 0,
@@ -21,10 +21,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a957490fe593_35709062',
+  'unifunc' => 'content_55a96847a60a57_41210788',
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a957490fe593_35709062')) {function content_55a957490fe593_35709062($_smarty_tpl) {?><!-- MODULE Block new products -->
+<?php if ($_valid && !is_callable('content_55a96847a60a57_41210788')) {function content_55a96847a60a57_41210788($_smarty_tpl) {?><!-- MODULE Block new products -->
 <div id="new-products_block_right" class="block products_block">
 	<h4 class="title_block">
     	<a href="http://localhost/Collivery-Prestashop/index.php?controller=new-products" title="New products">New products</a>
