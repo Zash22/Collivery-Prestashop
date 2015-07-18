@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-14 13:49:47
-         compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/modules/productcomments/productcomments.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:79037952755a5137b704f38-39662878%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 02:56:06
+         compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/modules/productcomments//productcomments.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:173156421655a9a426405f08-68172269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7a4736ba94a7a3121826df58b7348296a1cdf52b' => 
     array (
-      0 => '/var/www/html/Collivery-Prestashop/themes/default-bootstrap/modules/productcomments/productcomments.tpl',
+      0 => '/var/www/html/Collivery-Prestashop/themes/default-bootstrap/modules/productcomments//productcomments.tpl',
       1 => 1435846490,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '79037952755a5137b704f38-39662878',
+  'nocache_hash' => '173156421655a9a426405f08-68172269',
   'function' => 
   array (
   ),
@@ -35,9 +35,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a5137c85d919_34528170',
+  'unifunc' => 'content_55a9a426abc6f0_26797300',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a5137c85d919_34528170')) {function content_55a5137c85d919_34528170($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55a9a426abc6f0_26797300')) {function content_55a9a426abc6f0_26797300($_smarty_tpl) {?>
 <div id="idTab5">
 	<div id="product_comments_block_tab">
 		<?php if ($_smarty_tpl->tpl_vars['comments']->value) {?>

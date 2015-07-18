@@ -4,7 +4,7 @@
 if (!defined('_PS_VERSION_'))
 	exit;
 	
-class Mds extends CarrierModule
+class mds extends CarrierModule
 {
 	public  $id_carrier;
 	private $_html = '';
@@ -71,16 +71,10 @@ class Mds extends CarrierModule
 		}
 	
 				require_once 'helperClasses/MdsColliveryService.php';
-		
-				//die('5');
-				$this->mdsService = \helperClasses\MdsColliveryService::getInstance();
-				//die('4');
-				//$this->mdsService = MdsColliveryService::getInstance();
-			
-				$this->collivery = $this->mdsService->returnColliveryClass();
 				
-// 				$this->collivery->getTowns();
-// 				die(print_r($this->collivery->getTowns()));
+				$this->mdsService = \helperClasses\MdsColliveryService::getInstance();
+				$this->collivery = $this->mdsService->returnColliveryClass();
+
 				
 				
 
@@ -98,7 +92,6 @@ class Mds extends CarrierModule
 		$carrierConfig = array(
 			0 => array('name' => 'Overnight before 10:00',
 				'id_tax_rules_group' => 0,
-// 				'MYCARRIER1_CARRIER_ID' => '1',
 				'active' => true,
 				'deleted' => 0,
 				'shipping_handling' => false,
@@ -112,7 +105,6 @@ class Mds extends CarrierModule
 			),
 			1 => array('name' => 'Overnight before 16:00',
 				'id_tax_rules_group' => 0,
-// 				'MYCARRIER2_CARRIER_ID' => '2',
 				'active' => true,
 				'deleted' => 0,
 				'shipping_handling' => false,
@@ -126,7 +118,6 @@ class Mds extends CarrierModule
 			),
 			2 => array('name' => 'Road Freight',
 				'id_tax_rules_group' => 0,
-// 				'MYCARRIER3_CARRIER_ID' => '3',
 				'active' => true,
 				'deleted' => 0,
 				'shipping_handling' => false,
@@ -140,7 +131,6 @@ class Mds extends CarrierModule
 			),
 			3 => array('name' => 'Road Freight Express',
 				'id_tax_rules_group' => 0,
-// 				'MYCARRIER4_CARRIER_ID' => '5',
 				'active' => true,
 				'deleted' => 0,
 				'shipping_handling' => false,
@@ -170,6 +160,7 @@ class Mds extends CarrierModule
 		    !Configuration::updateValue('MYCARRIER3_OVERCOST', '') ||
 		    !Configuration::updateValue('MYCARRIER4_OVERCOST', '') ||
 		    !$this->registerHook('updateCarrier') ||
+		    !$this->registerHook('actionPaymentConfirmation') ||
 		    !$this-> registerHook('leftColumn')) 
 			return false;
 		return true;
@@ -186,6 +177,7 @@ class Mds extends CarrierModule
 		   
 		    
 		    !$this->unregisterHook('updateCarrier') ||
+		    !$this->unregisterHook('actionPaymentConfirmation') ||
 		    !$this->unregisterHook('leftColumn'))
 			return false;
 		
@@ -421,84 +413,99 @@ class Mds extends CarrierModule
 	** $shipping_cost var contains the price calculated by the range in carrier tab
 	**
 	*/
-	
-		
-		
-		public function  getColliveryQuote()
-		{
-			$orderParams = Array
-			(
-				'collivery_from' => '1190306',
-				'contact_from' => '1232622',
-				'collivery_to' => '1223084',
-				'contact_to' => '1267157',
-				'collivery_type'=> '2',
-				'weight' => '6',
-				'service' => '5',
-				'cover' => 'true',
-				'parcels' => Array
-						( 
-							'0' => Array
-									(
-										'weight' => '2',
-										'height' => '10',
-										'length' => '12',
-										'width' => '7'
-									),
-							'1' => Array
-									(
-										'weight' => '4',
-										'height' => '3',
-										'length' => '17',
-										'width' => '19'
-									)
-						)
-			);
 
-		
-			$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
-			$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
+	
+	
+	public function buildColliveryDataArray($params)
+	{
+			//print_r($params);
+// 			$params[id_address_delivery]  => sql search for address details collivery to
+// 			[id_customer] =>sql search for contact to
+// 			
+// 			
+// 			Product
+// 			[width] => 50.000000
+// 								[width] => 50.000000
+// 								[height] => 50.000000
+// 								[depth] => 50.000000
+// 								[quantity] => 1
+// 								[id_address_delivery] => 5
+// 													[weight_attribute] => 2.000000
 			
-			return $colliveryPrice;
+	
 			
+				$colliveryData = Array
+					(
+						'collivery_from' => '1190306',
+						'contact_from' => '1232622',
+						'collivery_to' => '1223084',
+						'contact_to' => '1267157',
+						'collivery_type'=> '2',
+						'weight' => '6',
+						'cover' => 'true',
+						'parcels' => Array
+								( 
+									'0' => Array
+											(
+												'weight' => '2',
+												'height' => '10',
+												'length' => '12',
+												'width' => '7'
+											),
+									'1' => Array
+											(
+												'weight' => '4',
+												'height' => '3',
+												'length' => '17',
+												'width' => '19'
+											)
+								)
+					);
+					
+				return $colliveryData;
 		}
-	
-	
-
 	
 	public function getOrderShippingCost($params, $shipping_cost)
 	{
 	
-		$orderParams = Array
-			(
-				'collivery_from' => '1190306',
-				'contact_from' => '1232622',
-				'collivery_to' => '1223084',
-				'contact_to' => '1267157',
-				'collivery_type'=> '2',
-				'weight' => '6',
-				'cover' => 'true',
-				'parcels' => Array
-						( 
-							'0' => Array
-									(
-										'weight' => '2',
-										'height' => '10',
-										'length' => '12',
-										'width' => '7'
-									),
-							'1' => Array
-									(
-										'weight' => '4',
-										'height' => '3',
-										'length' => '17',
-										'width' => '19'
+				//$orderParams = $this->buildColliveryDataArray($params);
+		
+			//	$orderParams = $colliveryData;
+			
+					$orderParams = Array
+						(
+							'collivery_from' => '1190306',
+							'contact_from' => '1232622',
+							'collivery_to' => '1223084',
+							'contact_to' => '1267157',
+							'collivery_type'=> '2',
+							'weight' => '6',
+							'cover' => 'true',
+							'parcels' => Array
+									( 
+										'0' => Array
+												(
+													'weight' => '2',
+													'height' => '10',
+													'length' => '12',
+													'width' => '7'
+												),
+										'1' => Array
+												(
+													'weight' => '4',
+													'height' => '3',
+													'length' => '17',
+													'width' => '19'
+												)
 									)
-						)
-			);
+						);
+						
+					//	print_r($orderParams);
+				
+
 		
 				switch ($this->id_carrier) {
-					case '60':
+					case '64':
 					
 						$orderParams[service] = 1;
 						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
@@ -509,7 +516,7 @@ class Mds extends CarrierModule
 						return $totalShipping;
 						break;
 						
-					case '61':
+					case '65':
 						$orderParams[service] = 2;
 						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
 						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
@@ -519,7 +526,7 @@ class Mds extends CarrierModule
 
 						break;
 						
-					case '62':
+					case '66':
 						$orderParams[service] = 3;
 						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
 						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
@@ -529,7 +536,7 @@ class Mds extends CarrierModule
 						
 						break;
 						
-					case '63':
+					case '67':
 						$orderParams[service] = 5;
 						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
 						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
@@ -543,7 +550,6 @@ class Mds extends CarrierModule
  						return  False;
  				}
 
-		
 	}
 	
 	public function getOrderShippingCostExternal($params)
@@ -556,76 +562,56 @@ class Mds extends CarrierModule
 // 		$this->collivery = new Collivery;
 // 		$towns = $this->collivery->getTowns();
 // 		$suburbs = $this->collivery->getSuburbs('147');
-	//	print_r($suburbs);
+// 		print_r($suburbs);
 	}
+	
+	public function hookActionPaymentConfirmation($orderParams) 
+	{
+		$orderParams = Array
+					(
+						'collivery_from' => '1190306',
+						'contact_from' => '1232622',
+						'collivery_to' => '1223084',
+						'contact_to' => '1267157',
+						'collivery_type'=> '2',
+						'service' => '3',
+						'weight' => '6',
+						'cover' => 'true',
+						'parcels' => Array
+								( 
+									'0' => Array
+											(
+												'weight' => '2',
+												'height' => '10',
+												'length' => '12',
+												'width' => '7'
+											),
+									'1' => Array
+											(
+												'weight' => '4',
+												'height' => '3',
+												'length' => '17',
+												'width' => '19'
+											)
+								)
+					);
+					
+				
+	
+	return $this->mdsService->addCollivery($orderParams, true);
+
+	}
+	
+
+
+	
+
 	
 }
 
 
-// ==========
-// Once order is confirmed use this to add collivery
-// ==========
-// 
-// public function getColliveryQuote(/*$orderParams*/){
-// 	
-// 		$colliveryData = Array
-// 		(
-// 			'collivery_from' => '1190306',
-//             'contact_from' => '1232622',
-//             'collivery_to' => '1223084',
-//             'contact_to' => '1267157',
-// 			'collivery_type'=> '2',
-// 			'weight' => '6',
-// 			'service' => '5',
-// 			'cover' => 'true',
-// 			'parcels' => Array
-// 					( 
-// 						'0' => Array
-// 								(
-// 									'weight' => '2',
-// 									'height' => '10',
-// 									'length' => '12',
-// 									'width' => '7'
-// 								),
-// 						'1' => Array
-// 								(
-// 									'weight' => '4',
-// 									'height' => '3',
-// 									'length' => '17',
-// 									'width' => '19'
-// 								)
-// 					)
-// 		);
-// 		
-// 		$validateCollivery = $this->collivery->validate($colliveryData);
-// 		
-// 		if ($validateCollivery){
-// 	// 		echo "Validate Collivery Results<pre>";
-// 	// 		print_r($validateCollivery);
-// 	// 		echo "</pre>";
-// 			
-// 			if ($addedCollivery = $this->collivery->addCollivery($validateCollivery)) {
-// 	// 			echo "Added Collivery Results<pre>";
-// 	// 			print_r($addedCollivery);
-// 	// 			echo "</pre>";
-// 				$colliveryStatus = $this->collivery->getStatus($addedCollivery);
-// 				if ($colliveryStatus) {
-// 				//echo "Collivery Status<pre>";
-// 				//print_r($colliveryStatus);
-// 				//echo $colliveryStatus[total_price];
-// 				//echo "</pre>";
-// // 				$colliveryCost = $colliveryStatus[total_price];
-// // 				return $colliveryCost;
-// 				return $colliveryStatus[total_price];
-// 				
-// 				}
-// 			}
-// 		}	
-// 		else {
-// 			echo "Errors<pre>";
-// 			print_r($this->collivery->getErrors());
-// 			echo "</pre>";
-// 		}
-// 	}
+
+
+
 
 
