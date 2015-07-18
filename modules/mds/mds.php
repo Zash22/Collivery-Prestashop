@@ -431,16 +431,24 @@ class mds extends CarrierModule
 // 								[quantity] => 1
 // 								[id_address_delivery] => 5
 // 													[weight_attribute] => 2.000000
-			
+
+		}
 	
+	public function getOrderShippingCost($params, $shipping_cost)
+	{
+	
+				//$orderParams = $this->buildColliveryDataArray($params);
+		
+			//	$orderParams = $colliveryData;
 			
-				$colliveryData = Array
+		$orderParams = Array
 					(
 						'collivery_from' => '1190306',
 						'contact_from' => '1232622',
 						'collivery_to' => '1223084',
 						'contact_to' => '1267157',
 						'collivery_type'=> '2',
+						//'service' => '3',
 						'weight' => '6',
 						'cover' => 'true',
 						'parcels' => Array
@@ -461,46 +469,8 @@ class mds extends CarrierModule
 											)
 								)
 					);
-					
-				return $colliveryData;
-		}
-	
-	public function getOrderShippingCost($params, $shipping_cost)
-	{
-	
-				//$orderParams = $this->buildColliveryDataArray($params);
-		
-			//	$orderParams = $colliveryData;
-			
-					$orderParams = Array
-						(
-							'collivery_from' => '1190306',
-							'contact_from' => '1232622',
-							'collivery_to' => '1223084',
-							'contact_to' => '1267157',
-							'collivery_type'=> '2',
-							'weight' => '6',
-							'cover' => 'true',
-							'parcels' => Array
-									( 
-										'0' => Array
-												(
-													'weight' => '2',
-													'height' => '10',
-													'length' => '12',
-													'width' => '7'
-												),
-										'1' => Array
-												(
-													'weight' => '4',
-													'height' => '3',
-													'length' => '17',
-													'width' => '19'
-												)
-									)
-						);
 						
-					//	print_r($orderParams);
+				//		print_r($orderParams);
 				
 
 		
@@ -508,8 +478,11 @@ class mds extends CarrierModule
 					case '64':
 					
 						$orderParams[service] = 1;
-						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
+						$colliveryPriceOptions =  $this->collivery->getPrice($orderParams); //Code broken here.
 						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
+								print_r($this->collivery->getPrice($orderParams));
+						
+					//	echo $colliveryPriceOptions[price][inc_vat] . "<br>";
 
 						$totalShipping = (float)(Configuration::get('MYCARRIER1_OVERCOST')) + $colliveryPrice;
 						
@@ -520,6 +493,8 @@ class mds extends CarrierModule
 						$orderParams[service] = 2;
 						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
 						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
+
+												echo $colliveryPriceOptions[price][inc_vat] . "<br>";
 
 						$totalShipping = (float)(Configuration::get('MYCARRIER2_OVERCOST')) + $colliveryPrice;
 						return $totalShipping;
@@ -565,7 +540,7 @@ class mds extends CarrierModule
 // 		print_r($suburbs);
 	}
 	
-	public function hookActionPaymentConfirmation($orderParams) 
+	public function hookActionPaymentConfirmation() 
 	{
 		$orderParams = Array
 					(
