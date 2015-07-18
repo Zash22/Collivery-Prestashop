@@ -570,4 +570,36 @@ class MdsColliveryService
 // 			return NULL;
 // 		}
 	}
+	
+	public function updateSuburbsDb(){
+	
+// 				$result = Db::getInstance(_PS_USE_SQL_SLAVE_)->getRow('
+// 		SELECT COUNT(`id_order`) AS used
+// 		FROM `'._DB_PREFIX_.'orders`
+// 		WHERE `id_address_delivery` = '.(int)$this->id.'
+// 		OR `id_address_invoice` = '.(int)$this->id);
+// 
+// 		return isset($result['used']) ? $result['used'] : false;
+
+// 			$result = Db::getInstance(_PS_USE_SQL_SLAVE_)->getRow('
+// 		SELECT *
+// 		FROM `'._DB_PREFIX_.'state`
+// 		WHERE `id_country` = 30');
+		
+		die('5');
+		
+		if (!$result)
+		{
+				echo "No";
+		}
+		else
+		{
+				echo "yes";
+		}
+
+		return 5;
+			
+// INSERT INTO `ps_state`(`id_state`, `id_country`, `id_zone`, `name`, `iso_code`, `tax_behavior`, `active`) VALUES (1,30,4,'gauteng','za',0,1)
+	
+	}
 }

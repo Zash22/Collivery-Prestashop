@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:113392610555a9683e13a3a9-05214031%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:6595058255aa1881b7f1d6-73887148%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -9,7 +9,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '113392610555a9683e13a3a9-05214031',
+  'nocache_hash' => '6595058255aa1881b7f1d6-73887148',
   'variables' => 
   array (
     'is_logged' => 0,
@@ -18,10 +18,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a9683e211f64_26459521',
+  'unifunc' => 'content_55aa1881cdf2c0_60255499',
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a9683e211f64_26459521')) {function content_55a9683e211f64_26459521($_smarty_tpl) {?><div id="contact-link"  class="is_logged">
+<?php if ($_valid && !is_callable('content_55aa1881cdf2c0_60255499')) {function content_55aa1881cdf2c0_60255499($_smarty_tpl) {?><div id="contact-link"  class="is_logged">
 	<a href="http://localhost/Collivery-Prestashop/index.php?controller=contact" title="Contact us">Contact us</a>
 </div>
 	<span class="shop-phone is_logged">

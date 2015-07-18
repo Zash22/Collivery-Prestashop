@@ -126,7 +126,7 @@ class AdminAddressesControllerCore extends AdminController
 					'name' => 'dni',
 					'required' => false,
 					'col' => '4',
-					'hint' => $this->l('DNI / NIF / NIE')
+					'hint' => $this->l('DNI /E')
 				),
 				array(
 					'type' => 'text',

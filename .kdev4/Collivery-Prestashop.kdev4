@@ -18,7 +18,7 @@ Execute on Remote Host=false
 Interpreter=php
 Output Filtering Mode=0
 Remote Host=
-Working Directory=file:///home/nicole/Documents
+Working Directory=file:///var/www/html/Collivery-Prestashop
 
 [Launch][Launch Configuration 1]
 Configured Launch Modes=execute

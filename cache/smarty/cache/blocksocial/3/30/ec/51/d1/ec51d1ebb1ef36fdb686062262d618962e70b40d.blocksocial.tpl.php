@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:150559924255a9683baadd16-89363904%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:47406016355aa187d490c94-61938262%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -9,7 +9,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '150559924255a9683baadd16-89363904',
+  'nocache_hash' => '47406016355aa187d490c94-61938262',
   'variables' => 
   array (
     'facebook_url' => 0,
@@ -23,10 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a9683bd85f35_47851986',
+  'unifunc' => 'content_55aa187d7eb6d0_32946361',
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a9683bd85f35_47851986')) {function content_55a9683bd85f35_47851986($_smarty_tpl) {?><section id="social_block" class="pull-right">
+<?php if ($_valid && !is_callable('content_55aa187d7eb6d0_32946361')) {function content_55aa187d7eb6d0_32946361($_smarty_tpl) {?><section id="social_block" class="pull-right">
 	<ul>
 					<li class="facebook">
 				<a class="_blank" href="http://www.facebook.com/prestashop">

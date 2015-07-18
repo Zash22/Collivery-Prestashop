@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:42283357655a9683b482af3-50067712%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:69362439155aa417feca821-00379637%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -15,13 +15,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '42283357655a9683b482af3-50067712',
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a9a1d961e294_64593756',
+  'nocache_hash' => '69362439155aa417feca821-00379637',
+  'variables' => 
+  array (
+    'best_sellers' => 0,
+  ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_55aa41801fb165_18298922',
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a9a1d961e294_64593756')) {function content_55a9a1d961e294_64593756($_smarty_tpl) {?>		
+<?php if ($_valid && !is_callable('content_55aa41801fb165_18298922')) {function content_55aa41801fb165_18298922($_smarty_tpl) {?>		
 									
 		
 	
@@ -51,7 +55,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										R17									</span>
 									<meta itemprop="priceCurrency" content="ZAR" />
 																												<span class="unvisible">
-																								<link itemprop="availability" href="http://schema.org/InStock" />In Stock																					</span>
+																								<link itemprop="availability" href="http://schema.org/InStock" />In stock																					</span>
 																		
 									
 															</div>
@@ -91,7 +95,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 																														</div>
 																		<span class="availability">
 																	<span class=" label-success">
-										In Stock									</span>
+										In stock									</span>
 															</span>
 															</div>
 							</div><!-- .product-container> -->
@@ -120,7 +124,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										R27									</span>
 									<meta itemprop="priceCurrency" content="ZAR" />
 																												<span class="unvisible">
-																								<link itemprop="availability" href="http://schema.org/InStock" />In Stock																					</span>
+																								<link itemprop="availability" href="http://schema.org/InStock" />In stock																					</span>
 																		
 									
 															</div>
@@ -160,7 +164,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 																														</div>
 																		<span class="availability">
 																	<span class=" label-success">
-										In Stock									</span>
+										In stock									</span>
 															</span>
 															</div>
 							</div><!-- .product-container> -->
@@ -189,7 +193,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										R26									</span>
 									<meta itemprop="priceCurrency" content="ZAR" />
 																												<span class="unvisible">
-																								<link itemprop="availability" href="http://schema.org/InStock" />In Stock																					</span>
+																								<link itemprop="availability" href="http://schema.org/InStock" />In stock																					</span>
 																		
 									
 															</div>
@@ -229,7 +233,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 																														</div>
 																		<span class="availability">
 																	<span class=" label-success">
-										In Stock									</span>
+										In stock									</span>
 															</span>
 															</div>
 							</div><!-- .product-container> -->
@@ -263,7 +267,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</span>
 																					<span class="price-percent-reduction">-20%</span>
 																																						<span class="unvisible">
-																								<link itemprop="availability" href="http://schema.org/InStock" />In Stock																					</span>
+																								<link itemprop="availability" href="http://schema.org/InStock" />In stock																					</span>
 																		
 									
 															</div>
@@ -310,7 +314,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 												</div>
 																		<span class="availability">
 																	<span class=" label-success">
-										In Stock									</span>
+										In stock									</span>
 															</span>
 															</div>
 							</div><!-- .product-container> -->
@@ -339,7 +343,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										R31									</span>
 									<meta itemprop="priceCurrency" content="ZAR" />
 																												<span class="unvisible">
-																								<link itemprop="availability" href="http://schema.org/InStock" />In Stock																					</span>
+																								<link itemprop="availability" href="http://schema.org/InStock" />In stock																					</span>
 																		
 									
 															</div>
@@ -379,7 +383,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 																														</div>
 																		<span class="availability">
 																	<span class=" label-success">
-										In Stock									</span>
+										In stock									</span>
 															</span>
 															</div>
 							</div><!-- .product-container> -->
@@ -413,7 +417,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</span>
 																					<span class="price-percent-reduction">-5%</span>
 																																						<span class="unvisible">
-																								<link itemprop="availability" href="http://schema.org/InStock" />In Stock																					</span>
+																								<link itemprop="availability" href="http://schema.org/InStock" />In stock																					</span>
 																		
 									
 															</div>
@@ -460,7 +464,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 												</div>
 																		<span class="availability">
 																	<span class=" label-success">
-										In Stock									</span>
+										In stock									</span>
 															</span>
 															</div>
 							</div><!-- .product-container> -->

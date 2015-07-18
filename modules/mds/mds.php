@@ -4,6 +4,12 @@
 if (!defined('_PS_VERSION_'))
 	exit;
 	
+// 	require_once './override/classes/Address.php';
+// 	require_once './override/controllers/admin/AdminAddressesController.php';
+// include './override/themes/default-bootstrap/addresses.tpl';
+// include './override/themes/default-bootstrap/address.tpl';
+
+	
 class mds extends CarrierModule
 {
 	public  $id_carrier;
@@ -71,6 +77,14 @@ class mds extends CarrierModule
 		}
 	
 				require_once 'helperClasses/MdsColliveryService.php';
+				//	include_once '../override/classes/Address.php';
+	//require_once 'override/controllers/admin/AdminAddressesController.php';
+	
+// 	require_once './override/classes/Address.php';
+// 	require_once './override/classes/controllers/AdminAddressesController.php';
+	
+	
+	
 				
 				$this->mdsService = \helperClasses\MdsColliveryService::getInstance();
 				$this->collivery = $this->mdsService->returnColliveryClass();
@@ -480,7 +494,7 @@ class mds extends CarrierModule
 						$orderParams[service] = 1;
 						$colliveryPriceOptions =  $this->collivery->getPrice($orderParams); //Code broken here.
 						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
-								print_r($this->collivery->getPrice($orderParams));
+								//print_r($this->collivery->getPrice($orderParams));
 						
 					//	echo $colliveryPriceOptions[price][inc_vat] . "<br>";
 
@@ -494,7 +508,7 @@ class mds extends CarrierModule
 						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
 						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
 
-												echo $colliveryPriceOptions[price][inc_vat] . "<br>";
+											//	echo $colliveryPriceOptions[price][inc_vat] . "<br>";
 
 						$totalShipping = (float)(Configuration::get('MYCARRIER2_OVERCOST')) + $colliveryPrice;
 						return $totalShipping;
@@ -535,9 +549,7 @@ class mds extends CarrierModule
     public function hookLeftColumn() {
     
 // 		$this->collivery = new Collivery;
-// 		$towns = $this->collivery->getTowns();
-// 		$suburbs = $this->collivery->getSuburbs('147');
-// 		print_r($suburbs);
+// $this->MdsColliveryService->updateSuburbsDb();
 	}
 	
 	public function hookActionPaymentConfirmation() 

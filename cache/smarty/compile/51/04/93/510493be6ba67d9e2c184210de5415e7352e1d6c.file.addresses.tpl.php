@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-14 13:50:21
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 12:06:28
          compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/addresses.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:72874384655a5139d7929f4-92873243%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:91320375955aa25248b1757-57694496%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '72874384655a5139d7929f4-92873243',
+  'nocache_hash' => '91320375955aa25248b1757-57694496',
   'function' => 
   array (
   ),
@@ -29,9 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a5139e6c16e5_57839373',
+  'unifunc' => 'content_55aa2524da01b0_88218277',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a5139e6c16e5_57839373')) {function content_55a5139e6c16e5_57839373($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.replace.php';
+<?php if ($_valid && !is_callable('content_55aa2524da01b0_88218277')) {function content_55aa2524da01b0_88218277($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.replace.php';
 ?>
 <?php $_smarty_tpl->_capture_stack[0][] = array('path', null, null); ob_start(); ?><a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('my-account',true), ENT_QUOTES, 'UTF-8', true);?>
 "><?php echo smartyTranslate(array('s'=>'My account'),$_smarty_tpl);?>
@@ -97,12 +97,12 @@ $_smarty_tpl->tpl_vars['key']->_loop = true;
                 <?php } ?>
                 <li class="address_update">
                 <a class="btn btn-default button button-small" href="<?php ob_start();?><?php echo intval($_smarty_tpl->tpl_vars['address']->value['object']['id']);?>
-<?php $_tmp31=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('address',true,null,"id_address=".$_tmp31), ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp7=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('address',true,null,"id_address=".$_tmp7), ENT_QUOTES, 'UTF-8', true);?>
 " title="<?php echo smartyTranslate(array('s'=>'Update'),$_smarty_tpl);?>
 "><span><?php echo smartyTranslate(array('s'=>'Update'),$_smarty_tpl);?>
 <i class="icon-chevron-right right"></i></span></a>
                 <a class="btn btn-default button button-small" href="<?php ob_start();?><?php echo intval($_smarty_tpl->tpl_vars['address']->value['object']['id']);?>
-<?php $_tmp32=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('address',true,null,"id_address=".$_tmp32."&delete"), ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp8=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('address',true,null,"id_address=".$_tmp8."&delete"), ENT_QUOTES, 'UTF-8', true);?>
 " data-id="addresses_confirm" title="<?php echo smartyTranslate(array('s'=>'Delete'),$_smarty_tpl);?>
 "><span><?php echo smartyTranslate(array('s'=>'Delete'),$_smarty_tpl);?>
 <i class="icon-remove right"></i></span></a></li>
