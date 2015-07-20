@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 02:26:47
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:35:10
          compiled from "/var/www/html/Collivery-Prestashop/admin6336ud39b/themes/default/template/controllers/orders/helpers/view/view.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:5509490955a99d47a07f81-63990571%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:68511408155acb2be101dd9-59556744%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -53,7 +53,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5509490955a99d47a07f81-63990571',
+  'nocache_hash' => '68511408155acb2be101dd9-59556744',
   'function' => 
   array (
   ),
@@ -64,9 +64,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a99d4e1e9086_05124372',
+  'unifunc' => 'content_55acb2c475d440_56843992',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a99d4e1e9086_05124372')) {function content_55a99d4e1e9086_05124372($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.replace.php';
+<?php if ($_valid && !is_callable('content_55acb2c475d440_56843992')) {function content_55acb2c475d440_56843992($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.replace.php';
 if (!is_callable('smarty_modifier_regex_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.regex_replace.php';
 ?>
 
@@ -421,8 +421,8 @@ $_smarty_tpl->tpl_vars['state']->_loop = true;
 						
 						<?php /*  Call merged included template "controllers/orders/_documents.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_documents.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '5509490955a99d47a07f81-63990571');
-content_55a99d487086a3_63398278($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_documents.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '68511408155acb2be101dd9-59556744');
+content_55acb2bed16932_14196678($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "controllers/orders/_documents.tpl" */?>
 					</div>
@@ -479,8 +479,8 @@ $_smarty_tpl = array_pop($_tpl_stack);
 							<?php }?>
 							<?php /*  Call merged included template "controllers/orders/_shipping.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_shipping.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '5509490955a99d47a07f81-63990571');
-content_55a99d491c0434_25262795($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_shipping.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '68511408155acb2be101dd9-59556744');
+content_55acb2bf793117_87278251($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "controllers/orders/_shipping.tpl" */?>
 							<?php if ($_smarty_tpl->tpl_vars['carrierModuleCall']->value) {?>
@@ -1409,23 +1409,23 @@ $_smarty_tpl->tpl_vars['product']->_loop = true;
 								
 								<?php /*  Call merged included template "controllers/orders/_customized_data.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_customized_data.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '5509490955a99d47a07f81-63990571');
-content_55a99d4ae0b033_25477675($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_customized_data.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '68511408155acb2be101dd9-59556744');
+content_55acb2c14884b2_49765487($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "controllers/orders/_customized_data.tpl" */?>
 								
 								<?php /*  Call merged included template "controllers/orders/_product_line.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_product_line.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '5509490955a99d47a07f81-63990571');
-content_55a99d4be04584_69828740($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_product_line.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '68511408155acb2be101dd9-59556744');
+content_55acb2c2456917_50338683($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "controllers/orders/_product_line.tpl" */?>
 							<?php } ?>
 							<?php if ($_smarty_tpl->tpl_vars['can_edit']->value) {?>
 								<?php /*  Call merged included template "controllers/orders/_new_product.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_new_product.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '5509490955a99d47a07f81-63990571');
-content_55a99d4cce8f82_49868254($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_new_product.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '68511408155acb2be101dd9-59556744');
+content_55acb2c3311d69_06202729($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "controllers/orders/_new_product.tpl" */?>
 							<?php }?>
@@ -1522,8 +1522,8 @@ $_smarty_tpl->tpl_vars['discount']->_loop = true;
 								<div class="current-edit" id="voucher_form" style="display:none;">
 									<?php /*  Call merged included template "controllers/orders/_discount_form.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_discount_form.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '5509490955a99d47a07f81-63990571');
-content_55a99d4d19c501_56935769($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('controllers/orders/_discount_form.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '68511408155acb2be101dd9-59556744');
+content_55acb2c3713cb2_18589167($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "controllers/orders/_discount_form.tpl" */?>
 								</div>
@@ -1993,9 +1993,9 @@ if (!empty($_capture_buffer)) {
 
 <?php }?>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 02:26:48
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:35:10
          compiled from "/var/www/html/Collivery-Prestashop/admin6336ud39b/themes/default/template/controllers/orders/_documents.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_55a99d487086a3_63398278')) {function content_55a99d487086a3_63398278($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55acb2bed16932_14196678')) {function content_55acb2bed16932_14196678($_smarty_tpl) {?>
 <div class="table-responsive">
 	<table class="table" id="documents_table">
 		<thead>
@@ -2214,9 +2214,9 @@ if (!$_smarty_tpl->tpl_vars['document']->_loop) {
 	</table>
 </div>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 02:26:49
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:35:11
          compiled from "/var/www/html/Collivery-Prestashop/admin6336ud39b/themes/default/template/controllers/orders/_shipping.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_55a99d491c0434_25262795')) {function content_55a99d491c0434_25262795($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.replace.php';
+<?php if ($_valid && !is_callable('content_55acb2bf793117_87278251')) {function content_55acb2bf793117_87278251($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.replace.php';
 ?>
 <div class="table-responsive">
 	<table class="table" id="shipping_table">
@@ -2313,9 +2313,9 @@ $_smarty_tpl->tpl_vars['line']->_loop = true;
 	</table>
 </div>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 02:26:50
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:35:13
          compiled from "/var/www/html/Collivery-Prestashop/admin6336ud39b/themes/default/template/controllers/orders/_customized_data.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_55a99d4ae0b033_25477675')) {function content_55a99d4ae0b033_25477675($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55acb2c14884b2_49765487')) {function content_55acb2c14884b2_49765487($_smarty_tpl) {?>
 <?php if ($_smarty_tpl->tpl_vars['product']->value['customizedDatas']) {?>
 
 <?php if (($_smarty_tpl->tpl_vars['order']->value->getTaxCalculationMethod()==@constant('PS_TAX_EXC'))) {?>
@@ -2631,9 +2631,9 @@ $_smarty_tpl->tpl_vars['data']->_loop = true;
 	<?php } ?>
 <?php }?>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 02:26:51
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:35:14
          compiled from "/var/www/html/Collivery-Prestashop/admin6336ud39b/themes/default/template/controllers/orders/_product_line.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_55a99d4be04584_69828740')) {function content_55a99d4be04584_69828740($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55acb2c2456917_50338683')) {function content_55acb2c2456917_50338683($_smarty_tpl) {?>
 
 
 <?php if (($_smarty_tpl->tpl_vars['order']->value->getTaxCalculationMethod()==@constant('PS_TAX_EXC'))) {?>
@@ -2934,9 +2934,9 @@ $_smarty_tpl->tpl_vars['invoice']->_loop = true;
 </tr>
 <?php }?>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 02:26:52
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:35:15
          compiled from "/var/www/html/Collivery-Prestashop/admin6336ud39b/themes/default/template/controllers/orders/_new_product.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_55a99d4cce8f82_49868254')) {function content_55a99d4cce8f82_49868254($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55acb2c3311d69_06202729')) {function content_55acb2c3311d69_06202729($_smarty_tpl) {?>
 <tr id="new_product" style="display:none">
 	<td style="display:none;" colspan="2">
 		<input type="hidden" id="add_product_product_id" name="add_product[product_id]" value="0" />
@@ -3068,9 +3068,9 @@ $_smarty_tpl->tpl_vars['invoice']->_loop = true;
 	</td>
 </tr>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 02:26:53
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:35:15
          compiled from "/var/www/html/Collivery-Prestashop/admin6336ud39b/themes/default/template/controllers/orders/_discount_form.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_55a99d4d19c501_56935769')) {function content_55a99d4d19c501_56935769($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55acb2c3713cb2_18589167')) {function content_55acb2c3713cb2_18589167($_smarty_tpl) {?>
 
 <div class="form-horizontal well">
 	<div class="form-group">

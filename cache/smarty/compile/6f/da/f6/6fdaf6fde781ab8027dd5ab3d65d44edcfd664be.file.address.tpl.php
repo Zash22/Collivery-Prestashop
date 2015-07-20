@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 14:12:57
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:31:54
          compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/address.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:98392180055aa42c9218cc4-43419754%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:155713574055acb1fa752c59-44637440%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6fdaf6fde781ab8027dd5ab3d65d44edcfd664be' => 
     array (
       0 => '/var/www/html/Collivery-Prestashop/themes/default-bootstrap/address.tpl',
-      1 => 1437212250,
+      1 => 1437240434,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '98392180055aa42c9218cc4-43419754',
+  'nocache_hash' => '155713574055acb1fa752c59-44637440',
   'function' => 
   array (
   ),
@@ -40,9 +40,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55aa42ca7aea46_76658030',
+  'unifunc' => 'content_55acb1fbdb7831_74681693',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55aa42ca7aea46_76658030')) {function content_55aa42ca7aea46_76658030($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55acb1fbdb7831_74681693')) {function content_55acb1fbdb7831_74681693($_smarty_tpl) {?>
 <?php $_smarty_tpl->_capture_stack[0][] = array('path', null, null); ob_start(); ?><?php echo smartyTranslate(array('s'=>'Your addresses'),$_smarty_tpl);?>
 <?php list($_capture_buffer, $_capture_assign, $_capture_append) = array_pop($_smarty_tpl->_capture_stack[0]);
 if (!empty($_capture_buffer)) {
@@ -115,6 +115,40 @@ $_smarty_tpl->tpl_vars['field_name']->_loop = true;
 					</div>
 				</div>
 			<?php }?>
+			<?php if ($_smarty_tpl->tpl_vars['field_name']->value=='my_custom_field') {?>
+				<div id="vat_area">
+					<div id="my_custom_field">
+						<div class="form-group">
+							<label for="my-custom-field"><?php echo smartyTranslate(array('s'=>'My Custom Field'),$_smarty_tpl);?>
+</label>
+							<input type="text" class="form-control validate" data-validate="<?php echo $_smarty_tpl->tpl_vars['address_validation']->value[$_smarty_tpl->tpl_vars['field_name']->value]['validate'];?>
+" id="my-custom-field" name="my_custom_field" value="<?php if (isset($_POST['my_custom_field'])) {?><?php echo $_POST['my_custom_field'];?>
+<?php } else { ?><?php if (isset($_smarty_tpl->tpl_vars['address']->value->my_custom_field)) {?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['address']->value->my_custom_field, ENT_QUOTES, 'UTF-8', true);?>
+<?php }?><?php }?>" />
+						</div>
+					</div>
+				</div>
+			<?php }?>
+		
+				<?php if (!$_smarty_tpl->tpl_vars['field_name']->value=='id_town') {?>
+				<div id="vat_area">
+					<div id="id_town">
+						<div class="form-group">
+							<label for="id_town"><?php echo smartyTranslate(array('s'=>'Town'),$_smarty_tpl);?>
+ <sup>*</sup></label>
+								<input type="text" class="form-control validate" data-validate="<?php echo $_smarty_tpl->tpl_vars['address_validation']->value[$_smarty_tpl->tpl_vars['field_name']->value]['validate'];?>
+" id="id_town" name="id_town" value="<?php if (isset($_POST['id_town'])) {?><?php echo $_POST['id_town'];?>
+<?php } else { ?><?php if (isset($_smarty_tpl->tpl_vars['address']->value->id_town)) {?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['address']->value->id_town, ENT_QUOTES, 'UTF-8', true);?>
+<?php }?><?php }?>" />
+							</div>
+						</div>
+					</div>
+			
+			<?php }?>
+		
+		
+		
+		
 			<?php if ($_smarty_tpl->tpl_vars['field_name']->value=='dni') {?>
 			<?php $_smarty_tpl->tpl_vars["dniExist"] = new Smarty_variable(true, null, 0);?>
 			<div class="required form-group">
@@ -181,7 +215,7 @@ $_smarty_tpl->tpl_vars['field_name']->_loop = true;
 			<?php }?>
 			<?php if ($_smarty_tpl->tpl_vars['field_name']->value=='city') {?>
 				<div class="required form-group">
-					<label for="city"><?php echo smartyTranslate(array('s'=>'CThis suy'),$_smarty_tpl);?>
+					<label for="city"><?php echo smartyTranslate(array('s'=>'City'),$_smarty_tpl);?>
  <sup>*</sup></label>
 					<input class="is_required validate form-control" data-validate="<?php echo $_smarty_tpl->tpl_vars['address_validation']->value[$_smarty_tpl->tpl_vars['field_name']->value]['validate'];?>
 " type="text" name="city" id="city" value="<?php if (isset($_POST['city'])) {?><?php echo $_POST['city'];?>
@@ -196,36 +230,6 @@ $_smarty_tpl->tpl_vars['field_name']->_loop = true;
 <sup>*</sup></label>
 					<select id="id_country" class="form-control" name="id_country"><?php echo $_smarty_tpl->tpl_vars['countries_list']->value;?>
 </select>
-				</div>
-			<?php }?>
-			<?php if ($_smarty_tpl->tpl_vars['field_name']->value=='Town:name') {?>
-				<?php $_smarty_tpl->tpl_vars["townExist"] = new Smarty_variable(true, null, 0);?>
-				<div class="required id_town form-group">
-					<label for="id_town"><?php echo smartyTranslate(array('s'=>'Town'),$_smarty_tpl);?>
- <sup>*</sup></label>
-					<select name="id_town" id="id_town" class="form-control">
-						<option value="">-</option>
-					</select>
-				</div>
-			<?php }?>
-			<?php if ($_smarty_tpl->tpl_vars['field_name']->value=='Suburb:name') {?>
-				<?php $_smarty_tpl->tpl_vars["suburbExist"] = new Smarty_variable(true, null, 0);?>
-				<div class="required id_suburb form-group">
-					<label for="id_suburb"><?php echo smartyTranslate(array('s'=>'Town'),$_smarty_tpl);?>
- <sup>*</sup></label>
-					<select name="id_suburb" id="id_suburb" class="form-control">
-						<option value="">-</option>
-					</select>
-				</div>
-			<?php }?>
-			<?php if ($_smarty_tpl->tpl_vars['field_name']->value=='id_delivery_location_type') {?>
-				<?php $_smarty_tpl->tpl_vars["idDeliveryLocationTypeExist"] = new Smarty_variable(true, null, 0);?>
-				<div class="required id_delivery_location_type form-group">
-					<label for="id_delivery_location_type"><?php echo smartyTranslate(array('s'=>'Lacation Type'),$_smarty_tpl);?>
- <sup>*</sup></label>
-					<select name="id_delivery_location_type" id="id_delivery_location_type" class="form-control">
-						<option value="">-</option>
-					</select>
 				</div>
 			<?php }?>
 			<?php if ($_smarty_tpl->tpl_vars['field_name']->value=='phone') {?>
@@ -266,8 +270,8 @@ $_smarty_tpl->tpl_vars['field_name']->_loop = true;
 <?php } else { ?><?php if (isset($_smarty_tpl->tpl_vars['address']->value->postcode)) {?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['address']->value->postcode, ENT_QUOTES, 'UTF-8', true);?>
 <?php }?><?php }?>" />
 			</div>
-		<?php }?>		
-		<?php if (!$_smarty_tpl->tpl_vars['stateExist']->value) {?>
+		<?php }?>
+				<?php if (!$_smarty_tpl->tpl_vars['stateExist']->value) {?>
 			<div class="required id_state form-group unvisible">
 				<label for="id_state"><?php echo smartyTranslate(array('s'=>'State'),$_smarty_tpl);?>
  <sup>*</sup></label>

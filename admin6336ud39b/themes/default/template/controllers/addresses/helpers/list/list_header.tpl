@@ -23,6 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 {extends file="helpers/list/list_header.tpl"}
+<script type="text/javascript"> alert('Please Enter A Title And A description'); </script>
 {block name='override_header'}
 {if $submit_form_ajax}
 	<script type="text/javascript">

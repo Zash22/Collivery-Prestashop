@@ -77,15 +77,7 @@ class mds extends CarrierModule
 		}
 	
 				require_once 'helperClasses/MdsColliveryService.php';
-				//	include_once '../override/classes/Address.php';
-	//require_once 'override/controllers/admin/AdminAddressesController.php';
 	
-// 	require_once './override/classes/Address.php';
-// 	require_once './override/classes/controllers/AdminAddressesController.php';
-	
-	
-	
-				
 				$this->mdsService = \helperClasses\MdsColliveryService::getInstance();
 				$this->collivery = $this->mdsService->returnColliveryClass();
 

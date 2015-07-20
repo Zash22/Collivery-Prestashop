@@ -34,6 +34,8 @@ define('_THEME_CSS_DIR_',				_THEME_DIR_.'css/');
 define('_THEME_JS_DIR_',				_THEME_DIR_.'js/');
 define('_PS_THEME_OVERRIDE_DIR_',		_PS_THEME_DIR_.'override/');
 
+
+
 /* For mobile devices */
 if (file_exists(_PS_THEME_DIR_.'mobile/'))
 {

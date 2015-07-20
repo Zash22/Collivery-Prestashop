@@ -66,6 +66,32 @@
 					</div>
 				</div>
 			{/if}
+			{if $field_name eq 'my_custom_field'}
+				<div id="vat_area">
+					<div id="my_custom_field">
+						<div class="form-group">
+							<label for="my-custom-field">{l s='My Custom Field'}</label>
+							<input type="text" class="form-control validate" data-validate="{$address_validation.$field_name.validate}" id="my-custom-field" name="my_custom_field" value="{if isset($smarty.post.my_custom_field)}{$smarty.post.my_custom_field}{else}{if isset($address->my_custom_field)}{$address->my_custom_field|escape:'html':'UTF-8'}{/if}{/if}" />
+						</div>
+					</div>
+				</div>
+			{/if}
+		
+				{if !$field_name eq 'id_town'}
+				<div id="vat_area">
+					<div id="id_town">
+						<div class="form-group">
+							<label for="id_town">{l s='Town'} <sup>*</sup></label>
+								<input type="text" class="form-control validate" data-validate="{$address_validation.$field_name.validate}" id="id_town" name="id_town" value="{if isset($smarty.post.id_town)}{$smarty.post.id_town}{else}{if isset($address->id_town)}{$address->id_town|escape:'html':'UTF-8'}{/if}{/if}" />
+							</div>
+						</div>
+					</div>
+			
+			{/if}
+		
+		
+		
+		
 			{if $field_name eq 'dni'}
 			{assign var="dniExist" value=true}
 			<div class="required form-group">
@@ -107,7 +133,7 @@
 			{/if}
 			{if $field_name eq 'city'}
 				<div class="required form-group">
-					<label for="city">{l s='CThis suy'} <sup>*</sup></label>
+					<label for="city">{l s='City'} <sup>*</sup></label>
 					<input class="is_required validate form-control" data-validate="{$address_validation.$field_name.validate}" type="text" name="city" id="city" value="{if isset($smarty.post.city)}{$smarty.post.city}{else}{if isset($address->city)}{$address->city|escape:'html':'UTF-8'}{/if}{/if}" maxlength="64" />
 				</div>
 				{* if customer hasn't update his layout address, country has to be verified but it's deprecated *}
@@ -116,33 +142,6 @@
 				<div class="required form-group">
 					<label for="id_country">{l s='Country'}<sup>*</sup></label>
 					<select id="id_country" class="form-control" name="id_country">{$countries_list}</select>
-				</div>
-			{/if}
-			{if $field_name eq 'Town:name'}
-				{assign var="townExist" value=true}
-				<div class="required id_town form-group">
-					<label for="id_town">{l s='Town'} <sup>*</sup></label>
-					<select name="id_town" id="id_town" class="form-control">
-						<option value="">-</option>
-					</select>
-				</div>
-			{/if}
-			{if $field_name eq 'Suburb:name'}
-				{assign var="suburbExist" value=true}
-				<div class="required id_suburb form-group">
-					<label for="id_suburb">{l s='Town'} <sup>*</sup></label>
-					<select name="id_suburb" id="id_suburb" class="form-control">
-						<option value="">-</option>
-					</select>
-				</div>
-			{/if}
-			{if $field_name eq 'id_delivery_location_type'}
-				{assign var="idDeliveryLocationTypeExist" value=true}
-				<div class="required id_delivery_location_type form-group">
-					<label for="id_delivery_location_type">{l s='Lacation Type'} <sup>*</sup></label>
-					<select name="id_delivery_location_type" id="id_delivery_location_type" class="form-control">
-						<option value="">-</option>
-					</select>
 				</div>
 			{/if}
 			{if $field_name eq 'phone'}
@@ -170,8 +169,8 @@
 				<label for="postcode">{l s='Zip/Postal Code'} <sup>*</sup></label>
 				<input class="is_required validate form-control" data-validate="{$address_validation.postcode.validate}" type="text" id="postcode" name="postcode" value="{if isset($smarty.post.postcode)}{$smarty.post.postcode}{else}{if isset($address->postcode)}{$address->postcode|escape:'html':'UTF-8'}{/if}{/if}" />
 			</div>
-		{/if}		
-		{if !$stateExist}
+		{/if}
+				{if !$stateExist}
 			<div class="required id_state form-group unvisible">
 				<label for="id_state">{l s='State'} <sup>*</sup></label>
 				<select name="id_state" id="id_state" class="form-control">
