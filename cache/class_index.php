@@ -61,7 +61,7 @@
   ),
   'Address' => 
   array (
-    'path' => 'override/classes/Address.php',
+    'path' => '',
     'type' => 'class',
     'override' => false,
   ),
@@ -133,8 +133,8 @@
   ),
   'AdminAddressesController' => 
   array (
-    'path' => 'override/controllers/admin/AdminAddressesController.php',
-    'type' => 'Class',
+    'path' => '',
+    'type' => 'class',
     'override' => false,
   ),
   'AdminAddressesControllerCore' => 

@@ -1,4 +1,10 @@
-a:1:{s:6:"format";s:69:"my_custom_field dni firstname lastname
+a:1:{s:6:"format";s:102:"firstname 
+lastname
 company
 vat_number
-address1";}
+address1
+address2
+Country:name
+phone
+phone_mobile
+city";}

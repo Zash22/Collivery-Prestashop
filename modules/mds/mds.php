@@ -167,7 +167,12 @@ class mds extends CarrierModule
 		    !Configuration::updateValue('MYCARRIER4_OVERCOST', '') ||
 		    !$this->registerHook('updateCarrier') ||
 		    !$this->registerHook('actionPaymentConfirmation') ||
-		    !$this-> registerHook('leftColumn')) 
+		    !$this-> registerHook('leftColumn') ||
+		    !$this->registerhook('displayFooter') ||
+		    !$this->registerHook('header') ||
+		    !$this->registerHook('backOfficeFooter') ||
+		    !$this->registerHook('backOfficeHeader'))
+
 			return false;
 		return true;
 	}
@@ -184,7 +189,10 @@ class mds extends CarrierModule
 		    
 		    !$this->unregisterHook('updateCarrier') ||
 		    !$this->unregisterHook('actionPaymentConfirmation') ||
-		    !$this->unregisterHook('leftColumn'))
+		    !$this->unregisterHook('leftColumn') ||
+		    !$this->unregisterhook('displayFooter')||
+		    !$this->unregisterHook('header') ||
+		    !$this->unregisterHook('backOfficeHeader'))
 			return false;
 		
 		// Delete External Carrier
@@ -216,7 +224,6 @@ class mds extends CarrierModule
 		return true;
 	}
 	
-	//name =[express => 1, normal => 2, road =>5]
 	public static function installExternalCarrier($config)
 	{
 		$carrier = new Carrier();
@@ -419,6 +426,15 @@ class mds extends CarrierModule
 	** $shipping_cost var contains the price calculated by the range in carrier tab
 	**
 	*/
+	
+		public function addStates()
+	{
+// 		die('5')
+// 		$towns = $this->collivery->getTowns();
+// 		return print_r($towns);
+// 		
+
+	}
 
 	
 	
@@ -539,9 +555,29 @@ class mds extends CarrierModule
 	}
 	
     public function hookLeftColumn() {
-    
-// 		$this->collivery = new Collivery;
-// $this->MdsColliveryService->updateSuburbsDb();
+		$towns = $this->collivery->getTowns();
+
+		$query = new DbQuery();
+		$query->select('count(*)');
+		$query->from('state');
+		$numberOfTowns = Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue($query);
+		
+		if ($numberOfTowns != array_count_values($towns))
+		{
+
+			$sql = 'DELETE * FROM '._DB_PREFIX_.'state';
+			Db::getInstance()->execute($sql);
+			
+			foreach($towns as $index => $town) {
+
+				$sql = 'INSERT INTO '._DB_PREFIX_.'state (id_state,id_country,id_zone,name,iso_code,tax_behavior,active)
+				VALUES 
+				('.$index.',30,4,\''.$town.'\',\'za\',0,1)';
+				 Db::getInstance()->execute($sql);
+			}
+
+		}
+		
 	}
 	
 	public function hookActionPaymentConfirmation() 
@@ -581,6 +617,26 @@ class mds extends CarrierModule
 
 	}
 	
+
+
+public function hookDisplayFooter()
+{
+
+$this->context->controller->addJS(($this->_path).'helper.js');
+
+
+return '<script type="text/javascript"> replaceText("State","Town"); replaceText("City","Suburb"); replaceText("Address (Line 2)","Location Type");</script>';
+
+
+
+}
+//public function hookBackOfficeHeader()
+public function displayBackOfficeFooter()
+{
+
+}
+
+
 
 
 	
