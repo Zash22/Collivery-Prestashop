@@ -18,32 +18,35 @@ function addDropDownSuburb(suburbs)
 {
 	var texts;
 
-	for (count=1; count<100; count++)
+	for (count=1; count<suburbs.length; count++)
 			{
-				texts += "<option value=\""  + suburbs[count] + "\">" +  suburbs[count]  + "</option> + ";
+				texts += "<option value=\""  + suburbs[count] + "\">" +  suburbs[count] + "</option> + ";
+			//	console.log(suburbs[count,count]);
 			}
+
 	
 	$("#city")
 		.replaceWith('<select id="city" name="city" >' +
 		'<option value="">-</option>' + texts +
-          
 		'</select>');
+		
+		
 
 }
 
 function addDropDownLocationType(location_types)
 {
+		
 	var text;
 
 	for (counter=1; counter<16; counter++)
 			{
-				text += "<option value=\"" + location_types[counter] + "\">" +  location_types[counter]  + "</option> + ";
+				text += "<option value=\"" + location_types[counter] + "\">" +  location_types[counter] + "</option> + ";
 			}
 	
 	$("#address2")
 		.replaceWith('<select id="address2" name="address2" >' +
 		'<option value="">-</option>' + text +
-          
 		'</select>');
 
 }

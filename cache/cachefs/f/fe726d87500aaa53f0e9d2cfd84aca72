@@ -1,1 +1,1 @@
-a:1:{i:0;a:4:{s:14:"id_order_state";s:1:"8";s:7:"id_lang";s:1:"1";s:4:"name";s:13:"Payment error";s:8:"template";s:13:"payment_error";}}
+a:2:{i:0;a:4:{s:14:"id_order_state";s:1:"8";s:7:"id_lang";s:1:"1";s:4:"name";s:13:"Payment error";s:8:"template";s:13:"payment_error";}i:1;a:4:{s:14:"id_order_state";s:1:"8";s:7:"id_lang";s:1:"2";s:4:"name";s:13:"Payment error";s:8:"template";s:13:"payment_error";}}

@@ -435,117 +435,243 @@ class mds extends CarrierModule
 // 		
 
 	}
+	
+	
+	
+	function getColliveryTo($params)
+		{
+		
+			return $colliveryParams;	
+		}
+	
+		function addAddress1($params)
+		{
+		
+		//	print_r($params[0]);
+		//	echo $params[id_address_delivery];
+		
+	//	$address1 = $params[id_address_delivery];
+		
+		//echo $address1;
+		
+		$addAddress1 =  $params->id_address_delivery;
+		
+	//	echo $addAddress1;
+		
+// 		$query = new DbQuery();
+// 		$query->select('*');
+// 		$query->from('address');
+// 		$query->where('address =' . '\'$addAddress1\'');
+// 		$numberOfTowns = Db::getInstance(_PS_USE_SQL_SLAVE_)->getRow($query);
+
+
+		$sql = 'SELECT * FROM '._DB_PREFIX_.'address
+			WHERE id_address = \'' .$addAddress1 . '\'';
+			$addressRow = Db::getInstance()->getRow($sql);
+			//print_r($addressRow);
+			
+			$addressRow[company] = $colliveryParams[company_name]; 
+			   $addressRow [other] =$colliveryParams[building];
+
+			
+		
+		
+// 		data = Array
+// (
+//     [company_name] => MDS Collivery
+//     [building] => MDS House
+//     [street] => 58c Webber St
+//     [location_type] => 5
+//     [suburb_id] => 1936
+//     [town_id] => 147
+//     [custom_id] => AF65549
+//     [full_name] => Bernhard Breytenbach
+//     [phone] => 0123456789
+//     [cellphone] => 0834567912
+//     [email] => name@domain.co.za
+// )
+// add_address(data, '4M8wJGBXC6KKpT0')
+		//print_r($numberOfTowns);
+		
+		
+				
+		}
 
 	
 	
 	public function buildColliveryDataArray($params)
 	{
-			//print_r($params);
-// 			$params[id_address_delivery]  => sql search for address details collivery to
-// 			[id_customer] =>sql search for contact to
-// 			
-// 			
-// 			Product
-// 			[width] => 50.000000
-// 								[width] => 50.000000
-// 								[height] => 50.000000
-// 								[depth] => 50.000000
-// 								[quantity] => 1
-// 								[id_address_delivery] => 5
-// 													[weight_attribute] => 2.000000
+		$colliveryParams;
+	
+		$this->addAddress1($params);
+		
+
+// 		$newAddress = array(
+// 			'company_name' => $array['company_name'],
+// 			'building' => $array['building'],
+// 			'street' => $array['street'],
+// 			'location_type' => $location_type_id,
+// 			'suburb_id' => $suburb_id,
+// 			'town_id' => $town_id,
+// 			'full_name' => $array['full_name'],
+// 			'phone' => (!empty($array['phone'])) ? $array['phone'] : '',
+// 			'cellphone' => $array['cellphone'],
+// 			'custom_id' => 'new_test_custom_id',
+// 			'email' => $array['email'],
+// 		);
+	
+	//	print_r($params);
+	
+// 		if (!pickupfromshopaddress)
+// 		{
+// 			use supplier's address for collivery from and contact from
+//$params[id_manufacturer]; //collivery from //contact to
+// 		
+// 		}
+// 		else
+// 		{
+// 			use shop address and owner's detail for collivery from and contact from
+// 		}
+		
+		
+// 		$params[id_address_delivery];  //collivery to //contact to
+// 		$params[id_manufacturer]; //collivery from //contact to
+
+		
+		
+// 		$params[products][][width];
+// 		$params[products][][height];
+// 		$params[products][][weight];
+// 		$params[products][][depth];
+		//config risk cover 
+		
+		
+		// 		$orderParams = Array
+// 					(
+// 						'collivery_from' => '1190306',
+// 						'contact_from' => '1232622',
+// 						'collivery_to' => '1223084',
+// 						'contact_to' => '1267157',
+// 						'collivery_type'=> '2',
+// 						'service' => '3',
+// 						'weight' => '6',
+// 						'cover' => 'true',
+// 						'parcels' => Array
+// 								( 
+// 									'0' => Array
+// 											(
+// 												'weight' => '2',
+// 												'height' => '10',
+// 												'length' => '12',
+// 												'width' => '7'
+// 											),
+// 									'1' => Array
+// 											(
+// 												'weight' => '4',
+// 												'height' => '3',
+// 												'length' => '17',
+// 												'width' => '19'
+// 											)
+// 								)
+// 					);
+		
+
 
 		}
 	
 	public function getOrderShippingCost($params, $shipping_cost)
 	{
 	
-				//$orderParams = $this->buildColliveryDataArray($params);
+					
+// 		$products = $params['cart']->getProducts(true);
+// 		print_r($products);
+		$orderParams = $this->buildColliveryDataArray($params);
 		
 			//	$orderParams = $colliveryData;
 			
-		$orderParams = Array
-					(
-						'collivery_from' => '1190306',
-						'contact_from' => '1232622',
-						'collivery_to' => '1223084',
-						'contact_to' => '1267157',
-						'collivery_type'=> '2',
-						//'service' => '3',
-						'weight' => '6',
-						'cover' => 'true',
-						'parcels' => Array
-								( 
-									'0' => Array
-											(
-												'weight' => '2',
-												'height' => '10',
-												'length' => '12',
-												'width' => '7'
-											),
-									'1' => Array
-											(
-												'weight' => '4',
-												'height' => '3',
-												'length' => '17',
-												'width' => '19'
-											)
-								)
-					);
+// 		$orderParams = Array
+// 					(
+// 						'collivery_from' => '1190306',
+// 						'contact_from' => '1232622',
+// 						'collivery_to' => '1223084',
+// 						'contact_to' => '1267157',
+// 						'collivery_type'=> '2',
+// 						'service' => '3',
+// 						'weight' => '6',
+// 						'cover' => 'true',
+// 						'parcels' => Array
+// 								( 
+// 									'0' => Array
+// 											(
+// 												'weight' => '2',
+// 												'height' => '10',
+// 												'length' => '12',
+// 												'width' => '7'
+// 											),
+// 									'1' => Array
+// 											(
+// 												'weight' => '4',
+// 												'height' => '3',
+// 												'length' => '17',
+// 												'width' => '19'
+// 											)
+// 								)
+// 					);
 						
 				//		print_r($orderParams);
 				
 
 		
-				switch ($this->id_carrier) {
-					case '64':
-					
-						$orderParams[service] = 1;
-						$colliveryPriceOptions =  $this->collivery->getPrice($orderParams); //Code broken here.
-						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
-								//print_r($this->collivery->getPrice($orderParams));
-						
-					//	echo $colliveryPriceOptions[price][inc_vat] . "<br>";
+		switch ($this->id_carrier) {
+			case '76':
+			
+				$orderParams[service] = 1;
+				$colliveryPriceOptions =  $this->collivery->getPrice($orderParams); //Code broken here.
+				(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
+						//print_r($this->collivery->getPrice($orderParams));
+				
+			//	echo $colliveryPriceOptions[price][inc_vat] . "<br>";
 
-						$totalShipping = (float)(Configuration::get('MYCARRIER1_OVERCOST')) + $colliveryPrice;
-						
-						return $totalShipping;
-						break;
-						
-					case '65':
-						$orderParams[service] = 2;
-						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
-						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
+				$totalShipping = (float)(Configuration::get('MYCARRIER1_OVERCOST')) + $colliveryPrice;
+				
+				return $totalShipping;
+				break;
+				
+			case '77':
+				$orderParams[service] = 2;
+				$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
+				(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
 
-											//	echo $colliveryPriceOptions[price][inc_vat] . "<br>";
+									//	echo $colliveryPriceOptions[price][inc_vat] . "<br>";
 
-						$totalShipping = (float)(Configuration::get('MYCARRIER2_OVERCOST')) + $colliveryPrice;
-						return $totalShipping;
+				$totalShipping = (float)(Configuration::get('MYCARRIER2_OVERCOST')) + $colliveryPrice;
+				return $totalShipping;
 
-						break;
-						
-					case '66':
-						$orderParams[service] = 3;
-						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
-						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
+				break;
+				
+			case '78':
+				$orderParams[service] = 3;
+				$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
+				(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
 
-						$totalShipping = (float)(Configuration::get('MYCARRIER3_OVERCOST')) + $colliveryPrice;
-						return $totalShipping;
-						
-						break;
-						
-					case '67':
-						$orderParams[service] = 5;
-						$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
-						(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
+				$totalShipping = (float)(Configuration::get('MYCARRIER3_OVERCOST')) + $colliveryPrice;
+				return $totalShipping;
+				
+				break;
+				
+			case '79':
+				$orderParams[service] = 5;
+				$colliveryPriceOptions =  $this->collivery->getPrice( $orderParams );
+				(float)$colliveryPrice = $colliveryPriceOptions[price][inc_vat];
 
-						$totalShipping = (float)(Configuration::get('MYCARRIER4_OVERCOST')) + $colliveryPrice;
-						return $totalShipping;
-						
-						break;
-						
-					default:
- 						return  False;
- 				}
+				$totalShipping = (float)(Configuration::get('MYCARRIER4_OVERCOST')) + $colliveryPrice;
+				return $totalShipping;
+				
+				break;
+				
+			default:
+				return  False;
+		}
 
 	}
 	
@@ -613,45 +739,49 @@ class mds extends CarrierModule
 					
 				
 	
-	return $this->mdsService->addCollivery($orderParams, true);
+		return $this->mdsService->addCollivery($orderParams, true);
 
 	}
 	
 
 
-public function hookDisplayFooter()
-{
+	public function hookDisplayFooter()
+	{
 
-$this->context->controller->addJS(($this->_path).'helper.js');
+		$this->context->controller->addJS(($this->_path).'helper.js');
 
-$suburbs = $this->collivery->getSuburbs('248');
-$location_types = $this->collivery->getLocationTypes();
+		$suburbs = $this->collivery->getSuburbs('248');
+		$location_types = $this->collivery->getLocationTypes();
+		$count = 0;
 
-  
-return '<script type="text/javascript">
-			var suburbs= '.  json_encode( $suburbs ) .';
-			var location_types= '.  json_encode( $location_types ) .';
-			replaceText("State","Town"); 
-			replaceText("City","Suburb"); 
-			replaceText("Address (Line 2)","Location Type");
-			addDropDownSuburb(suburbs);
-			addDropDownLocationType(location_types);
-		</script>';
+		foreach($suburbs as  $index => $suburb) 
+		{
 
-}
+			$suburb2[$count]= $suburbs[$index];
+			$count++;
+
+		}
+
+		
+		return '<script type="text/javascript">
+
+					var suburbs= '.  json_encode( $suburb2 ) .';
+					var location_types= '.  json_encode( $location_types ) .';
+					replaceText("State","Town"); 
+					replaceText("City","Suburb"); 
+					replaceText("Address (Line 2)","Location Type");
+					addDropDownSuburb(suburbs);
+					addDropDownLocationType(location_types);
+				</script>';
+
+	}
+
+	public function displayBackOfficeFooter()
+	{
+
+	}
 
 
-public function displayBackOfficeFooter()
-{
-
-}
-
-
-
-
-	
-
-	
 }
 
 
