@@ -14,18 +14,88 @@ function replaceText(oldText, newText, node){
   } 
 }
 
-function addDropDowns()
+function addDropDownSuburb()
 {
-	
-// 	$("#city").html('Hello');
+
+$("#city")
+    .replaceWith('<select id="city" name="city" >' +
+	'<option value="">-</option>' +
+          '<option value="1">1</option>' +
+          '<option value="2">2</option>' +
+          '<option value="3">3</option>' +
+          '<option value="4">4</option>' +
+          '<option value="5">5</option>' +
+        '</select>');
 }
+
+function addDropDownLocationType(location_types)
+{
+	//	alert (location_types.length);
+	
+// 	for (counter=0; counter<10; counter++)
+// 	{
+//    document.write(location_types[counter] + "<br>");
+//    //alert (location_types[counter] + "<br >");
+// 	}
+//	location_types.toString();
+	
+// 	 var temp = new Array();
+	
+var text;
+
+for (counter=0; counter<16; counter++)
+		{
+
+			text += "\'<option value=\"location_types[counter]\">\'" +  location_types[counter]  + "\'</option>\' + ";
+		}
+alert(text);
+	
+	
+$("#address2")
+    .replaceWith('<select id="address2" name="address2" >' +
+	'<option value="">-</option>' +
+	text +
+
+	 '</select>');
+          
+          
+          
+          
+/*          
+          '<option value="1">1</option>' +
+          '<option value="2">2</option>' +
+          '<option value="3">3</option>' +
+          '<option value="4">4</option>' +
+          '<option value="5">5</option>' +
+        '</select>');
+	*/
+
+	
+	
+	
+
+  
+
+}
+
+
+
 
 
 function test()
 {
-	alert ("hi");
+// 	    var jArray=  json_encode($phpArray ); 
+// 
+//     for(var i=0;i<6;i++){
+//         alert(jArray[i]);
+//     }
 	
 }
+
+
+
+
+
 
 // function renderForm()
 // 	{

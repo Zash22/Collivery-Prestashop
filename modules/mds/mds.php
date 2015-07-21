@@ -624,13 +624,63 @@ public function hookDisplayFooter()
 
 $this->context->controller->addJS(($this->_path).'helper.js');
 
+$suburbs = $this->collivery->getSuburbs();
+		$location_types = $this->collivery->getLocationTypes();
+		
+		
+// 		$phpArray = array(
+//           0 => "Mon", 
+//           1 => "Tue", 
+//           2 => "Wed", 
+//           3 => "Thu",
+//           4 => "Fri", 
+//           5 => "Sat",
+//           6 => "Sun",
+// 
+//     );
+//     
+//   return  '<script type="text/javascript">
+// 
+// test();
+// 
+//  </script>';
 
-return '<script type="text/javascript"> replaceText("State","Town"); replaceText("City","Suburb"); replaceText("Address (Line 2)","Location Type");</script>';
+
+
+
+
+// PHP array
+// $products = array(
+//     // product abbreviation, product name, unit price
+//     array('choc_cake', 'Chocolate Cake', 15),
+//     array('carrot_cake', 'Carrot Cake', 12),
+//     array('cheese_cake', 'Cheese Cake', 20),
+//     array('banana_bread', 'Banana Bread', 14)
+// );
+
+// return '<script type="text/javascript">
+// var products = '.  json_encode( $products ). ';
+// alert( products[0][1] ); 
+// </script>';
+  
+  
+  
+return '<script type="text/javascript">
+
+			var location_types= '.  json_encode( $location_types ) .';
+			replaceText("State","Town"); 
+			replaceText("City","Suburb"); 
+			replaceText("Address (Line 2)","Location Type");
+			addDropDownSuburb();
+			addDropDownLocationType(location_types);
+		</script>';
+
 
 
 
 }
-//public function hookBackOfficeHeader()
+
+
 public function displayBackOfficeFooter()
 {
 
