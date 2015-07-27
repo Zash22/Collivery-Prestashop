@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:111414931355ae0714ef1517-44182331%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:78665395055b5c704afade6-47407806%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -15,17 +15,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '111414931355ae0714ef1517-44182331',
+  'nocache_hash' => '78665395055b5c704afade6-47407806',
   'variables' => 
   array (
     'best_sellers' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55ae07152450c7_03198325',
+  'unifunc' => 'content_55b5c704d902c3_07998372',
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55ae07152450c7_03198325')) {function content_55ae07152450c7_03198325($_smarty_tpl) {?>		
+<?php if ($_valid && !is_callable('content_55b5c704d902c3_07998372')) {function content_55b5c704d902c3_07998372($_smarty_tpl) {?>		
 									
 		
 	
@@ -245,6 +245,75 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="product-container" itemscope itemtype="http://schema.org/Product">
 				<div class="left-block">
 					<div class="product-image-container">
+						<a class="product_img_link" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" title="Printed Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://localhost/Collivery-Prestashop/img/p/1/0/10-home_default.jpg" alt="Printed Dress" title="Printed Dress"  width="250" height="250" itemprop="image" />
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" rel="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" rel="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+                                        
+										R51									</span>
+									<meta itemprop="priceCurrency" content="ZAR" />
+																												<span class="unvisible">
+																								<link itemprop="availability" href="http://schema.org/InStock" />In stock																					</span>
+																		
+									
+															</div>
+																			<a class="new-box" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product">
+								<span class="new-label">New</span>
+							</a>
+																	</div>
+										
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" title="Printed Dress" itemprop="url" >
+							Printed Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Printed evening dress with straight sleeves with black thin waist belt and ruffled linings.
+					</p>
+										<div class="content_price">
+						                            
+							<span class="price product-price">
+								R51							</span>
+														
+							
+                            
+											</div>
+										<div class="button-container">
+																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=2821f1224de558c4e6f740582c833cb1" rel="nofollow" title="Add to cart" data-id-product="4" data-minimal_quantity="1">
+									<span>Add to cart</span>
+								</a>
+																			<a class="button lnk_view btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span class="availability">
+																	<span class=" label-success">
+										In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line last-line first-item-of-mobile-line">
+			<div class="product-container" itemscope itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
 						<a class="product_img_link" href="http://localhost/Collivery-Prestashop/index.php?id_product=6&amp;controller=product" title="Printed Summer Dress" itemprop="url">
 							<img class="replace-2x img-responsive" src="http://localhost/Collivery-Prestashop/img/p/1/6/16-home_default.jpg" alt="Printed Summer Dress" title="Printed Summer Dress"  width="250" height="250" itemprop="image" />
 						</a>
@@ -310,7 +379,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			
 		
 		
-								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line last-line first-item-of-mobile-line">
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-line last-item-of-tablet-line last-item-of-mobile-line">
 			<div class="product-container" itemscope itemtype="http://schema.org/Product">
 				<div class="left-block">
 					<div class="product-image-container">
@@ -381,75 +450,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										<div class="product-flags">
 																																	<span class="discount">Reduced price!</span>
 												</div>
-																		<span class="availability">
-																	<span class=" label-success">
-										In stock									</span>
-															</span>
-															</div>
-							</div><!-- .product-container> -->
-		</li>
-			
-		
-		
-								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-line last-item-of-tablet-line last-item-of-mobile-line">
-			<div class="product-container" itemscope itemtype="http://schema.org/Product">
-				<div class="left-block">
-					<div class="product-image-container">
-						<a class="product_img_link" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" title="Printed Dress" itemprop="url">
-							<img class="replace-2x img-responsive" src="http://localhost/Collivery-Prestashop/img/p/1/0/10-home_default.jpg" alt="Printed Dress" title="Printed Dress"  width="250" height="250" itemprop="image" />
-						</a>
-													<div class="quick-view-wrapper-mobile">
-							<a class="quick-view-mobile" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" rel="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product">
-								<i class="icon-eye-open"></i>
-							</a>
-						</div>
-						<a class="quick-view" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" rel="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product">
-							<span>Quick view</span>
-						</a>
-																			<div class="content_price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-																	<span itemprop="price" class="price product-price">
-                                        
-										R51									</span>
-									<meta itemprop="priceCurrency" content="ZAR" />
-																												<span class="unvisible">
-																								<link itemprop="availability" href="http://schema.org/InStock" />In stock																					</span>
-																		
-									
-															</div>
-																			<a class="new-box" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product">
-								<span class="new-label">New</span>
-							</a>
-																	</div>
-										
-				</div>
-				<div class="right-block">
-					<h5 itemprop="name">
-												<a class="product-name" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" title="Printed Dress" itemprop="url" >
-							Printed Dress
-						</a>
-					</h5>
-					
-					<p class="product-desc" itemprop="description">
-						Printed evening dress with straight sleeves with black thin waist belt and ruffled linings.
-					</p>
-										<div class="content_price">
-						                            
-							<span class="price product-price">
-								R51							</span>
-														
-							
-                            
-											</div>
-										<div class="button-container">
-																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=2821f1224de558c4e6f740582c833cb1" rel="nofollow" title="Add to cart" data-id-product="4" data-minimal_quantity="1">
-									<span>Add to cart</span>
-								</a>
-																			<a class="button lnk_view btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" title="View">
-							<span>More</span>
-						</a>
-					</div>
-										<div class="product-flags">
-																														</div>
 																		<span class="availability">
 																	<span class=" label-success">
 										In stock									</span>

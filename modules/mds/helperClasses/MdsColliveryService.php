@@ -1,6 +1,7 @@
 <?php
 
 namespace helperClasses;
+use Exception;
 /**
  * MdsColliveryService
  */
@@ -86,12 +87,7 @@ class MdsColliveryService
 
 		$this->collivery = new Collivery(array(
 		'demo' => true,
-// 			'app_name' => 'WooCommerce MDS Shipping Plugin', // Application Name
-// 			'app_version' => MDS_VERSION, // Plugin Version
-// 			'app_host' => 'Wordpress: ' . $wp_version . ' - WooCommerce: ' . $this->returnWoocommerceVersionNumber(), // Framework/CMS name and version, eg 'Wordpress 3.8.1 WooCommerce 2.0.20' / ''
-// 			'app_url' => get_site_url(), // URL your site is hosted on
-// 			'user_email' => $username, // Your Mds account
-// 			'user_password' => $password // Your Mds account password
+
 		));
 	}
 
@@ -220,71 +216,7 @@ class MdsColliveryService
 	 * @param $order_id
 	 * @param bool $processing
 	 */
-// 	public function automatedAddCollivery($order_id, $processing = false)
-// 	{
-// 		
-// 		//$order = new WC_Order($order_id);
-// 
-// 		$colliveries = $wpdb->get_var("SELECT COUNT(*) FROM " . $wpdb->prefix . "mds_collivery_processed WHERE order_id=" . $order->id . ";");
-// 
-// 		if($colliveries == 0) {
-// 			try {
-// 				$this->updateStatusOrAddNote($order, 'MDS auto processing has begun.', $processing, 'processing');
-// 
-// 				$parcels = $this->getOrderContent($order->get_items());
-// 				$defaults = $this->returnDefaultAddress();
-// 
-// 				foreach($order->get_shipping_methods() as $shipping) {
-// 					$services[str_replace("mds_", "", $shipping['method_id'])] = $shipping['name'];
-// 				}
-// 
-// 				$address = $this->addColliveryAddress(array(
-// 					'company_name' => ( $order->shipping_company != "" ) ? $order->shipping_company : 'Private',
-// 					'building' => $order->shipping_building_details,
-// 					'street' => $order->shipping_address_1 . ' ' . $order->shipping_address_2,
-// 					'location_type' => $order->shipping_location_type,
-// 					'suburb' => $order->shipping_city,
-// 					'town' => $order->shipping_state,
-// 					'full_name' => $order->shipping_first_name . ' ' . $order->shipping_last_name,
-// 					'cellphone' => $order->shipping_phone,
-// 					'email' => $order->shipping_email,
-// 					'custom_id' => $order->user_id
-// 				));
-// 
-// 				$collivery_from = $defaults['default_address_id'];
-// 				list($contact_from) = array_keys($defaults['contacts']);
-// 
-// 				$collivery_to = $address['address_id'];
-// 				$contact_to = $address['contact_id'];
-// 
-// 				$service_id = array_search($order->get_shipping_method(), $services);
-// 
-// 				$collivery_id = $this->addCollivery(array(
-// 					'collivery_from' => (int) $collivery_from,
-// 					'contact_from' => (int) $contact_from,
-// 					'collivery_to' => (int) $collivery_to,
-// 					'contact_to' => (int) $contact_to,
-// 					'collivery_type' => 2,
-// 					'service' => (int) $service_id,
-// 					'cover' => ($this->settings['risk_cover'] == 'yes') ? 1 : 0,
-// 					'parcel_count' => count($parcels),
-// 					'parcels' => $parcels
-// 				));
-// 
-// 				$collection_time = (isset($this->validated_data['collection_time'])) ? ' anytime from: ' . date('Y-m-d H:i', $this->validated_data['collection_time'])  : '';
-// 
-// 				if($collivery_id) {
-// 					// Save the results from validation into our table
-// 					$this->addColliveryToProcessedTable($collivery_id, $order->id);
-// 					$this->updateStatusOrAddNote($order, 'Order has been sent to MDS Collivery, Waybill Number: ' . $collivery_id . ', please have order ready for collection' . $collection_time . '.', $processing, 'completed');
-// 				} else {
-// 					$this->updateStatusOrAddNote($order, 'There was a problem sending this the delivery request to MDS Collivery, you will need to manually process.', $processing, 'processing');
-// 				}
-// 			} catch(Exception $e) {
-// 				$this->updateStatusOrAddNote($order, 'There was a problem sending this the delivery request to MDS Collivery, you will need to manually process. Error: ' . $e->getMessage(), $processing, 'processing');
-// 			}
-// 		}
-// 	}
+
 
 	/**
 	 * Adds the new collivery to our mds processed table

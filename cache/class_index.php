@@ -61,7 +61,7 @@
   ),
   'Address' => 
   array (
-    'path' => '',
+    'path' => 'override/classes/Address.php',
     'type' => 'class',
     'override' => false,
   ),
@@ -73,7 +73,7 @@
   ),
   'AddressControllerCore' => 
   array (
-    'path' => 'controllers/front/AddressController.php',
+    'path' => 'override/controllers/front/AddressController.php',
     'type' => 'class',
     'override' => false,
   ),
@@ -103,7 +103,7 @@
   ),
   'AddressesControllerCore' => 
   array (
-    'path' => 'controllers/front/AddressesController.php',
+    'path' => 'override/controllers/front/AddressesController.php',
     'type' => 'class',
     'override' => false,
   ),
@@ -139,7 +139,7 @@
   ),
   'AdminAddressesControllerCore' => 
   array (
-    'path' => 'controllers/admin/AdminAddressesController.php',
+    'path' => 'override/controllers/admin/AdminAddressesController.php',
     'type' => 'class',
     'override' => false,
   ),

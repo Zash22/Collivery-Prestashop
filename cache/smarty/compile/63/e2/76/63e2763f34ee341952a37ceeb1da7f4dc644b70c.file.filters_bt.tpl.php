@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-15 10:19:57
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-27 09:53:45
          compiled from "/var/www/html/Collivery-Prestashop/modules/gamification/views/templates/admin/gamification/helpers/view/filters_bt.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:213519498355a617ad23f742-43827477%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:18668326755b5e389e4a2e5-14703663%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '213519498355a617ad23f742-43827477',
+  'nocache_hash' => '18668326755b5e389e4a2e5-14703663',
   'function' => 
   array (
   ),
@@ -27,9 +27,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a617ad428b48_20407860',
+  'unifunc' => 'content_55b5e38a1131c1_92833921',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a617ad428b48_20407860')) {function content_55a617ad428b48_20407860($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['type']->value)) {?>
+<?php if ($_valid && !is_callable('content_55b5e38a1131c1_92833921')) {function content_55b5e38a1131c1_92833921($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['type']->value)) {?>
 <form class="form-horizontal well" role="form">
 	<?php if ($_smarty_tpl->tpl_vars['type']->value=='badges_feature'||$_smarty_tpl->tpl_vars['type']->value=='badges_achievement') {?>
 		<div class="form-group">

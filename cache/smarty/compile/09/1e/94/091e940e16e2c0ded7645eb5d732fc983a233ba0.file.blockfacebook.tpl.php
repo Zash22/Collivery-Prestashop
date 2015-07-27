@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:18:21
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-27 09:54:21
          compiled from "/var/www/html/Collivery-Prestashop/modules/blockfacebook/blockfacebook.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:47478134855acaecdb72203-87513772%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21211336955b5e3ada1a1b7-42875877%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '47478134855acaecdb72203-87513772',
+  'nocache_hash' => '21211336955b5e3ada1a1b7-42875877',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55acaecdbbc7a8_31130633',
+  'unifunc' => 'content_55b5e3ada658c2_15884086',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55acaecdbbc7a8_31130633')) {function content_55acaecdbbc7a8_31130633($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55b5e3ada658c2_15884086')) {function content_55b5e3ada658c2_15884086($_smarty_tpl) {?>
 <?php if ($_smarty_tpl->tpl_vars['facebookurl']->value!='') {?>
 <div id="fb-root"></div>
 <div id="facebook_block" class="col-xs-4">

@@ -114,7 +114,7 @@
 <module name="yotpo" position="7"/>
 <module name="riskified" position="8"/>
 <module name="remarkety" position="9"/>
-<module name="liverperson" position="10"/>
+<module name="liveperson" position="10"/>
 <module name="veplatform" position="11"/>
 </tab>
 <tab class_name="AdminContacts" display_type="slider_list">
@@ -124,10 +124,10 @@
 <module name="expressmailing" position="4"/>
 <module name="iadvize" position="5"/>
 <module name="olark" position="6"/>
-<module name="liverperson" position="7"/>
+<module name="liveperson" position="7"/>
 <module name="webcallback" position="8"/>
 <module name="remarkety" position="9"/>
-<module name="liverperson" position="10"/>
+<module name="liveperson" position="10"/>
 <module name="veplatform" position="11"/>
 </tab>
 <tab class_name="AdminCartRules" display_type="slider_list">
@@ -136,7 +136,7 @@
 <module name="pushoncart" position="3"/>
 <module name="cartabandonmentpro" position="4"/>
 <module name="remarkety" position="5"/>
-<module name="liverperson" position="6"/>
+<module name="liveperson" position="6"/>
 <module name="pricewaiter" position="7"/>
 <module name="couponpop" position="8"/>
 </tab>
@@ -338,7 +338,7 @@
 <module name="mynewsletter" position="6"/>
 <module name="mailchimp" position="7"/>
 <module name="remarkety" position="8"/>
-<module name="liverperson" position="9"/>
+<module name="liveperson" position="9"/>
 </tab>
 <tab class_name="AdminBackup" display_type="slider_list">
 <module name="ovhhosting" position="1"/>
