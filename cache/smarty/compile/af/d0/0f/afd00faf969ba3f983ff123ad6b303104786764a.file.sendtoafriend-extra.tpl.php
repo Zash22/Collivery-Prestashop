@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 02:56:05
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-28 10:51:17
          compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/modules/sendtoafriend/sendtoafriend-extra.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:34098923055a9a4258ae977-97837223%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:181695115455b742855d4770-17862802%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '34098923055a9a4258ae977-97837223',
+  'nocache_hash' => '181695115455b742855d4770-17862802',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a9a425ad4954_07673851',
+  'unifunc' => 'content_55b742858525f7_07309147',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a9a425ad4954_07673851')) {function content_55a9a425ad4954_07673851($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55b742858525f7_07309147')) {function content_55b742858525f7_07309147($_smarty_tpl) {?>
 <li class="sendtofriend">
 	<a id="send_friend_button" href="#send_friend_form">
 		<?php echo smartyTranslate(array('s'=>'Send to a friend','mod'=>'sendtoafriend'),$_smarty_tpl);?>

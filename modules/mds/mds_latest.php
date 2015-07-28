@@ -4,7 +4,7 @@
 if (!defined('_PS_VERSION_'))
 	exit;
 	
-class mds extends CarrierModule
+class mdss extends CarrierModule
 {
 	public  $id_carrier;
 	private $_html = '';

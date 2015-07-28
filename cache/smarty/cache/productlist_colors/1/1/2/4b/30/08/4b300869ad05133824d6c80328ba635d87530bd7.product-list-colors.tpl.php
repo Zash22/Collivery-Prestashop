@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:13786967255ae104589fa62-59540195%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:192457609855b63249f21855-19616188%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -9,29 +9,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13786967255ae104589fa62-59540195',
-  'variables' => 
-  array (
-    'colors_list' => 0,
-    'col_img_dir' => 0,
-    'color' => 0,
-    'link' => 0,
-    'img_color_exists' => 0,
-    'img_col_dir' => 0,
-  ),
-  'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55ae1045b364c8_65820228',
+  'nocache_hash' => '192457609855b63249f21855-19616188',
   'cache_lifetime' => 31536000,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_55b636981dbea1_81279782',
+  'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55ae1045b364c8_65820228')) {function content_55ae1045b364c8_65820228($_smarty_tpl) {?><ul class="color_to_pick_list clearfix">
-									<li>
-				<a href="http://localhost/Collivery-Prestashop/index.php?id_product=1&amp;controller=product#/size-s/color-orange" id="color_1" class="color_pick" style="background:#F39C11;">
-									</a>
-			</li>
-											<li>
-				<a href="http://localhost/Collivery-Prestashop/index.php?id_product=1&amp;controller=product#/size-s/color-blue" id="color_2" class="color_pick" style="background:#5D9CEC;">
-									</a>
-			</li>
-			</ul>
-<?php }} ?>
+<?php if ($_valid && !is_callable('content_55b636981dbea1_81279782')) {function content_55b636981dbea1_81279782($_smarty_tpl) {?><?php }} ?>

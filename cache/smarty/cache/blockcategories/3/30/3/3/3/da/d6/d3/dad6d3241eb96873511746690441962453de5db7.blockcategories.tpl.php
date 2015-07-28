@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:197828180055ae10423a7520-97844234%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:189456229755b632458bec51-99937162%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -15,20 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '197828180055ae10423a7520-97844234',
-  'variables' => 
-  array (
-    'blockCategTree' => 0,
-    'currentCategory' => 0,
-    'isDhtml' => 0,
-    'child' => 0,
-  ),
-  'has_nocache_code' => false,
+  'nocache_hash' => '189456229755b632458bec51-99937162',
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55ae1042509296_29444902',
+  'unifunc' => 'content_55b63694e64545_31576093',
+  'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55ae1042509296_29444902')) {function content_55ae1042509296_29444902($_smarty_tpl) {?><!-- Block categories module -->
+<?php if ($_valid && !is_callable('content_55b63694e64545_31576093')) {function content_55b63694e64545_31576093($_smarty_tpl) {?><!-- Block categories module -->
 <div id="categories_block_left" class="block">
 	<h2 class="title_block">
 					Women

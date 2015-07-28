@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:5039030455ae10456ff922-45006120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:192457609855b63249f21855-19616188%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -9,13 +9,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5039030455ae10456ff922-45006120',
+  'nocache_hash' => '192457609855b63249f21855-19616188',
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55ae1045ce0dd7_63005252',
+  'unifunc' => 'content_55b63698612772_68440585',
   'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55ae1045ce0dd7_63005252')) {function content_55ae1045ce0dd7_63005252($_smarty_tpl) {?><ul class="color_to_pick_list clearfix">
+<?php if ($_valid && !is_callable('content_55b63698612772_68440585')) {function content_55b63698612772_68440585($_smarty_tpl) {?><ul class="color_to_pick_list clearfix">
 									<li>
 				<a href="http://localhost/Collivery-Prestashop/index.php?id_product=7&amp;controller=product#/size-s/color-green" id="color_37" class="color_pick" style="background:#A0D468;">
 									</a>

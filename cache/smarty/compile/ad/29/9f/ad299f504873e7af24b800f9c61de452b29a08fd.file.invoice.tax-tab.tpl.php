@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:35:07
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-27 14:13:19
          compiled from "/var/www/html/Collivery-Prestashop/pdf/invoice.tax-tab.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:196752742355acb2bb32e050-69879718%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:122859244755b6205ff31a06-77633764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '196752742355acb2bb32e050-69879718',
+  'nocache_hash' => '122859244755b6205ff31a06-77633764',
   'function' => 
   array (
   ),
@@ -30,9 +30,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55acb2bb62ff06_04722684',
+  'unifunc' => 'content_55b62060303b93_51749750',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55acb2bb62ff06_04722684')) {function content_55acb2bb62ff06_04722684($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55b62060303b93_51749750')) {function content_55b62060303b93_51749750($_smarty_tpl) {?>
 
 <!--  TAX DETAILS -->
 <?php if ($_smarty_tpl->tpl_vars['tax_exempt']->value) {?>

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-14 13:51:44
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-27 15:48:20
          compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/authentication.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:48559496755a513f09ad8b9-35833558%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:128345402455b636a48b34e2-57892963%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '48559496755a513f09ad8b9-35833558',
+  'nocache_hash' => '128345402455b636a48b34e2-57892963',
   'function' => 
   array (
   ),
@@ -60,9 +60,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a513f6c96cc8_01832537',
+  'unifunc' => 'content_55b636a73742f9_62222481',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a513f6c96cc8_01832537')) {function content_55a513f6c96cc8_01832537($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55b636a73742f9_62222481')) {function content_55b636a73742f9_62222481($_smarty_tpl) {?>
 <?php $_smarty_tpl->_capture_stack[0][] = array('path', null, null); ob_start(); ?>
 	<?php if (!isset($_smarty_tpl->tpl_vars['email_create']->value)) {?><?php echo smartyTranslate(array('s'=>'Authentication'),$_smarty_tpl);?>
 <?php } else { ?>
@@ -94,7 +94,7 @@ if (!empty($_capture_buffer)) {
 	<!--<?php if (isset($_smarty_tpl->tpl_vars['authentification_error']->value)) {?>
 	<div class="alert alert-danger">
 		<?php ob_start();?><?php echo count($_smarty_tpl->tpl_vars['authentification_error']->value);?>
-<?php $_tmp25=ob_get_clean();?><?php if ($_tmp25==1) {?>
+<?php $_tmp1=ob_get_clean();?><?php if ($_tmp1==1) {?>
 			<p><?php echo smartyTranslate(array('s'=>'There\'s at least one error'),$_smarty_tpl);?>
  :</p>
 			<?php } else { ?>
@@ -610,7 +610,7 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
 	<!--<?php if (isset($_smarty_tpl->tpl_vars['account_error']->value)) {?>
 	<div class="error">
 		<?php ob_start();?><?php echo count($_smarty_tpl->tpl_vars['account_error']->value);?>
-<?php $_tmp26=ob_get_clean();?><?php if ($_tmp26==1) {?>
+<?php $_tmp2=ob_get_clean();?><?php if ($_tmp2==1) {?>
 			<p><?php echo smartyTranslate(array('s'=>'There\'s at least one error'),$_smarty_tpl);?>
  :</p>
 			<?php } else { ?>

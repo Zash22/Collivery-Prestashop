@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:134728436555a9683be31684-88646146%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:35382263555b214370be1b7-88043317%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '134728436555a9683be31684-88646146',
+  'nocache_hash' => '35382263555b214370be1b7-88043317',
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a9a426bd8b11_95214062',
+  'unifunc' => 'content_55b7b02b653604_64770916',
   'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a9a426bd8b11_95214062')) {function content_55a9a426bd8b11_95214062($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55b7b02b653604_64770916')) {function content_55b7b02b653604_64770916($_smarty_tpl) {?>
 <!-- Block categories module -->
 <section class="blockcategories_footer footer-block col-xs-12 col-sm-2">
 	<h4>Categories</h4>
@@ -85,7 +85,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 																
 <li >
 	<a 
-	href="http://localhost/Collivery-Prestashop/index.php?id_category=10&amp;controller=category" title="Browse our different dresses to choose the perfect dress for an unforgettable evening!">
+	href="http://localhost/Collivery-Prestashop/index.php?id_category=10&amp;controller=category" class="selected" title="Browse our different dresses to choose the perfect dress for an unforgettable evening!">
 		Evening Dresses
 	</a>
 	</li>

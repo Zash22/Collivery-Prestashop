@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-20 10:34:02
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-27 14:10:49
          compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/modules/bankwire/views/templates/hook/payment.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:28160799855acb27a42ca86-67432225%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:78059862255b61fc90ad3c1-66726608%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '28160799855acb27a42ca86-67432225',
+  'nocache_hash' => '78059862255b61fc90ad3c1-66726608',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55acb27a48b131_38689609',
+  'unifunc' => 'content_55b61fc9116fd0_36747786',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55acb27a48b131_38689609')) {function content_55acb27a48b131_38689609($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_55b61fc9116fd0_36747786')) {function content_55b61fc9116fd0_36747786($_smarty_tpl) {?>
 <div class="row">
 	<div class="col-xs-12">
 		<p class="payment_module">

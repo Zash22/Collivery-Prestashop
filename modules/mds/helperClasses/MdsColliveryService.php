@@ -249,6 +249,7 @@ class MdsColliveryService
 	 */
 	public function addColliveryAddress(array $array)
 	{
+	
 		$towns = $this->collivery->getTowns();
 		$location_types = $this->collivery->getLocationTypes();
 
@@ -305,6 +306,8 @@ class MdsColliveryService
 			'custom_id' => 'new_test_custom_id',
 			'email' => $array['email'],
 		);
+		
+	
 
 		// Before adding an address lets search MDS and see if we have already added this address
 		$searchAddresses = $this->searchAndMatchAddress([
