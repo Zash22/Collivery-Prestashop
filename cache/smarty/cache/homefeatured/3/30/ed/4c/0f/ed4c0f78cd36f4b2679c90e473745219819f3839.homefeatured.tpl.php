@@ -16,16 +16,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     ),
   ),
   'nocache_hash' => '143704908555b5c704835999-21032639',
-  'variables' => 
-  array (
-    'products' => 0,
-  ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55b5c704abb5d8_63130948',
+  'unifunc' => 'content_55b8a1df7cd5d8_76654277',
+  'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55b5c704abb5d8_63130948')) {function content_55b5c704abb5d8_63130948($_smarty_tpl) {?>		
+<?php if ($_valid && !is_callable('content_55b8a1df7cd5d8_76654277')) {function content_55b8a1df7cd5d8_76654277($_smarty_tpl) {?>		
 									
 		
 	
@@ -84,7 +80,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             
 											</div>
 										<div class="button-container">
-																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=1&amp;token=2821f1224de558c4e6f740582c833cb1" rel="nofollow" title="Add to cart" data-id-product="1" data-minimal_quantity="1">
+																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=1&amp;token=30935531508a8b66d0ab6af06e8bbd01" rel="nofollow" title="Add to cart" data-id-product="1" data-minimal_quantity="1">
 									<span>Add to cart</span>
 								</a>
 																			<a class="button lnk_view btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?id_product=1&amp;controller=product" title="View">
@@ -153,7 +149,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             
 											</div>
 										<div class="button-container">
-																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=2&amp;token=2821f1224de558c4e6f740582c833cb1" rel="nofollow" title="Add to cart" data-id-product="2" data-minimal_quantity="1">
+																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=2&amp;token=30935531508a8b66d0ab6af06e8bbd01" rel="nofollow" title="Add to cart" data-id-product="2" data-minimal_quantity="1">
 									<span>Add to cart</span>
 								</a>
 																			<a class="button lnk_view btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?id_product=2&amp;controller=product" title="View">
@@ -222,7 +218,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             
 											</div>
 										<div class="button-container">
-																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;token=2821f1224de558c4e6f740582c833cb1" rel="nofollow" title="Add to cart" data-id-product="3" data-minimal_quantity="1">
+																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;token=30935531508a8b66d0ab6af06e8bbd01" rel="nofollow" title="Add to cart" data-id-product="3" data-minimal_quantity="1">
 									<span>Add to cart</span>
 								</a>
 																			<a class="button lnk_view btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?id_product=3&amp;controller=product" title="View">
@@ -291,7 +287,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             
 											</div>
 										<div class="button-container">
-																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=2821f1224de558c4e6f740582c833cb1" rel="nofollow" title="Add to cart" data-id-product="4" data-minimal_quantity="1">
+																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=30935531508a8b66d0ab6af06e8bbd01" rel="nofollow" title="Add to cart" data-id-product="4" data-minimal_quantity="1">
 									<span>Add to cart</span>
 								</a>
 																			<a class="button lnk_view btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?id_product=4&amp;controller=product" title="View">
@@ -371,7 +367,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             
 											</div>
 										<div class="button-container">
-																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;token=2821f1224de558c4e6f740582c833cb1" rel="nofollow" title="Add to cart" data-id-product="5" data-minimal_quantity="1">
+																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;token=30935531508a8b66d0ab6af06e8bbd01" rel="nofollow" title="Add to cart" data-id-product="5" data-minimal_quantity="1">
 									<span>Add to cart</span>
 								</a>
 																			<a class="button lnk_view btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?id_product=5&amp;controller=product" title="View">
@@ -441,7 +437,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             
 											</div>
 										<div class="button-container">
-																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=6&amp;token=2821f1224de558c4e6f740582c833cb1" rel="nofollow" title="Add to cart" data-id-product="6" data-minimal_quantity="1">
+																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=6&amp;token=30935531508a8b66d0ab6af06e8bbd01" rel="nofollow" title="Add to cart" data-id-product="6" data-minimal_quantity="1">
 									<span>Add to cart</span>
 								</a>
 																			<a class="button lnk_view btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?id_product=6&amp;controller=product" title="View">
@@ -521,7 +517,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             
 											</div>
 										<div class="button-container">
-																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=7&amp;token=2821f1224de558c4e6f740582c833cb1" rel="nofollow" title="Add to cart" data-id-product="7" data-minimal_quantity="1">
+																													<a class="button ajax_add_to_cart_button btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?controller=cart&amp;add=1&amp;id_product=7&amp;token=30935531508a8b66d0ab6af06e8bbd01" rel="nofollow" title="Add to cart" data-id-product="7" data-minimal_quantity="1">
 									<span>Add to cart</span>
 								</a>
 																			<a class="button lnk_view btn btn-default" href="http://localhost/Collivery-Prestashop/index.php?id_product=7&amp;controller=product" title="View">

@@ -11,9 +11,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'nocache_hash' => '108099820755b5c7025d3160-74459920',
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55b87cebcdb4d9_26501916',
+  'unifunc' => 'content_55b8a1df07fe33_64850867',
   'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55b87cebcdb4d9_26501916')) {function content_55b87cebcdb4d9_26501916($_smarty_tpl) {?><li><a data-toggle="tab" href="#blocknewproducts" class="blocknewproducts">New arrivals</a></li>
+<?php if ($_valid && !is_callable('content_55b8a1df07fe33_64850867')) {function content_55b8a1df07fe33_64850867($_smarty_tpl) {?><li><a data-toggle="tab" href="#blocknewproducts" class="blocknewproducts">New arrivals</a></li>
 <?php }} ?>

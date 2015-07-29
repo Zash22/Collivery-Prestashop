@@ -593,7 +593,8 @@ class Mds extends CarrierModule {
 		$colliveryParams['contact_from'] = $colliveryAddressFrom['contact_id'];
 		$colliveryParams['collivery_type'] = '2';
 
-		foreach ($cart->getProducts() as $colliveryProduct) {
+		foreach ($cart->getProducts() as $colliveryProduct) 
+		{
 			for ($i = 0; $i < $colliveryProduct['cart_quantity']; $i++)
 			{	echo $i;
 				$colliveryParams['parcels'][] = array(
@@ -616,12 +617,29 @@ class Mds extends CarrierModule {
 		$sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'address
 		WHERE id_address = \'' . $addAddress1 . '\' AND deleted = 0';
 		$addressRow = Db::getInstance()->getRow($sql);
+		$cartProducts = $params->getProducts();
+		print_r($addressRow);
 
 		$colliveryAddressFrom = $this->getDefaultColliveryAddressFrom($params);
 
 		$colliveryGetPriceArray = Array();
  		$colliveryGetPriceArray['to_town_id'] = $addressRow['id_state'];
  		$colliveryGetPriceArray['collivery_from'] = $colliveryAddressFrom['address_id'];
+ 		//$colliveryGetPriceArray['to_location_type'] = $addressRow['address2'];
+
+ 		
+ 		foreach ($cartProducts as $colliveryProduct) 
+		{
+			for ($i = 0; $i < $colliveryProduct['cart_quantity']; $i++)
+			{	
+				$colliveryGetPriceArray['parcels'][] = array(
+					'weight' => $colliveryProduct['weight'],
+					'height' => $colliveryProduct['height'],
+					'width' => $colliveryProduct['width'],
+					'length' => $colliveryProduct['depth']
+				);
+			}
+		}
 
 		return $colliveryGetPriceArray;
 	
@@ -635,9 +653,6 @@ class Mds extends CarrierModule {
 	public function getOrderShippingCost($params, $shipping_cost)
 	{
 		$orderParams = $this->buildColliveryGetPriceArray($params);
-
-		$orderParams['service'] = 1;
-		$colliveryPriceOptions = $this->collivery->getPrice($orderParams);
 
 		switch ($this->id_carrier) {
 			case '100':
@@ -756,20 +771,20 @@ class Mds extends CarrierModule {
 	public function hookDisplayFooter()
 	{
 		
-				$this->context->controller->addJS(($this->_path).'helper.js');
+		$this->context->controller->addJS(($this->_path).'helper.js');
 
-				$suburbs = $this->collivery->getSuburbs('248');
-				$location_types = $this->collivery->getLocationTypes();
+		$suburbs = $this->collivery->getSuburbs('248');
+		$location_types = $this->collivery->getLocationTypes();
 
-				return '<script type="text/javascript">
-							var suburbs= '.  json_encode( $suburbs ) .';
-							var location_types= '.  json_encode( $location_types ) .';
-							replaceText("State","Town");
-							replaceText("City","Suburb");
-							replaceText("Address (Line 2)","Location Type");
-							 addDropDownSuburb(suburbs);
-							addDropDownLocationType(location_types);
-						</script>';
+		return '<script type="text/javascript">
+					var suburbs= '.  json_encode( $suburbs ) .';
+					var location_types= '.  json_encode( $location_types ) .';
+					replaceText("State","Town");
+					replaceText("City","Suburb");
+					replaceText("Address (Line 2)","Location Type");
+						addDropDownSuburb(suburbs);
+					addDropDownLocationType(location_types);
+				</script>';
 		
 	}
 
