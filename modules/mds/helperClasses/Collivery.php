@@ -770,17 +770,23 @@ class Collivery {
 
 		if ( ! isset( $data['collivery_from'] ) && ! isset( $data['from_town_id'] ) )
 			$this->setError( 'missing_data', 'collivery_from/from_town_id not set.' );
+			
 		elseif ( isset( $data['collivery_from'] ) && ! is_array( $this->getAddress( $data['collivery_from'] ) ) )
 			$this->setError( 'invalid_data', 'Invalid Address ID for: collivery_from.' );
+			
 		elseif ( isset( $data['from_town_id'] ) && ! isset( $towns[ $data['from_town_id'] ] ) )
 			$this->setError( 'invalid_data', 'Invalid Town ID for: from_town_id.' );
+			
 
 		if ( ! isset( $data['collivery_to'] ) && ! isset( $data['to_town_id'] ) )
 			$this->setError( 'missing_data', 'collivery_to/to_town_id not set.' );
+			
 		elseif ( isset( $data['collivery_to'] ) && ! is_array( $this->getAddress( $data['collivery_to'] ) ) )
 			$this->setError( 'invalid_data', 'Invalid Address ID for: collivery_to.' );
+			
 		elseif ( isset( $data['to_town_id'] ) && ! isset( $towns[ $data['to_town_id'] ] ) )
 			$this->setError( 'invalid_data', 'Invalid Town ID for: to_town_id.' );
+			
 
 		if ( ! isset( $data['service'] ) )
 			$this->setError( 'missing_data', 'service not set.' );

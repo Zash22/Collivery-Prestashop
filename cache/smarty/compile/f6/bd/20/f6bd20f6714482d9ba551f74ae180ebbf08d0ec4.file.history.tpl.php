@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 00:45:06
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-29 11:06:29
          compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/history.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:56560558355a98572420371-70339278%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:127848482555b897957e1497-39274873%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '56560558355a98572420371-70339278',
+  'nocache_hash' => '127848482555b897957e1497-39274873',
   'function' => 
   array (
   ),
@@ -30,9 +30,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a98572b317a8_49425631',
+  'unifunc' => 'content_55b89795f1d902_31801731',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a98572b317a8_49425631')) {function content_55a98572b317a8_49425631($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_regex_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.regex_replace.php';
+<?php if ($_valid && !is_callable('content_55b89795f1d902_31801731')) {function content_55b89795f1d902_31801731($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_regex_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.regex_replace.php';
 ?>
 <?php $_smarty_tpl->_capture_stack[0][] = array('path', null, null); ob_start(); ?>
 	<a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('my-account',true), ENT_QUOTES, 'UTF-8', true);?>
@@ -160,12 +160,12 @@ icon/download_product.gif"	alt="<?php echo smartyTranslate(array('s'=>'Products 
 							</a>
 							<?php if (isset($_smarty_tpl->tpl_vars['opc']->value)&&$_smarty_tpl->tpl_vars['opc']->value) {?>
 								<a class="link-button" href="<?php ob_start();?><?php echo intval($_smarty_tpl->tpl_vars['order']->value['id_order']);?>
-<?php $_tmp7=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('order-opc',true,null,"submitReorder&id_order=".$_tmp7), ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp1=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('order-opc',true,null,"submitReorder&id_order=".$_tmp1), ENT_QUOTES, 'UTF-8', true);?>
 " title="<?php echo smartyTranslate(array('s'=>'Reorder'),$_smarty_tpl);?>
 ">
 							<?php } else { ?>
 								<a class="link-button" href="<?php ob_start();?><?php echo intval($_smarty_tpl->tpl_vars['order']->value['id_order']);?>
-<?php $_tmp8=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('order',true,null,"submitReorder&id_order=".$_tmp8), ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp2=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('order',true,null,"submitReorder&id_order=".$_tmp2), ENT_QUOTES, 'UTF-8', true);?>
 " title="<?php echo smartyTranslate(array('s'=>'Reorder'),$_smarty_tpl);?>
 ">
 							<?php }?>

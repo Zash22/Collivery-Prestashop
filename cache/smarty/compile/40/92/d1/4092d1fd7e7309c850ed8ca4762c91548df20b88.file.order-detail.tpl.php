@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-07-18 00:46:01
+<?php /* Smarty version Smarty-3.1.19, created on 2015-07-29 11:06:37
          compiled from "/var/www/html/Collivery-Prestashop/themes/default-bootstrap/order-detail.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:178921114555a985a901a6b1-86327233%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:190934772355b8979daf3559-74895978%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '178921114555a985a901a6b1-86327233',
+  'nocache_hash' => '190934772355b8979daf3559-74895978',
   'function' => 
   array (
   ),
@@ -74,9 +74,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a985ab11f789_85032320',
+  'unifunc' => 'content_55b8979fbd82f2_88342408',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a985ab11f789_85032320')) {function content_55a985ab11f789_85032320($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.replace.php';
+<?php if ($_valid && !is_callable('content_55b8979fbd82f2_88342408')) {function content_55b8979fbd82f2_88342408($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.replace.php';
 if (!is_callable('smarty_function_counter')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/function.counter.php';
 if (!is_callable('smarty_modifier_regex_replace')) include '/var/www/html/Collivery-Prestashop/tools/smarty/plugins/modifier.regex_replace.php';
 ?>
@@ -515,14 +515,14 @@ $_smarty_tpl->tpl_vars['data']->_loop = true;
 								<?php if ($_smarty_tpl->tpl_vars['product']->value['download_hash']&&$_smarty_tpl->tpl_vars['logable']->value&&$_smarty_tpl->tpl_vars['product']->value['display_filename']!=''&&$_smarty_tpl->tpl_vars['product']->value['product_quantity_refunded']==0&&$_smarty_tpl->tpl_vars['product']->value['product_quantity_return']==0) {?>
 									<?php if (isset($_smarty_tpl->tpl_vars['is_guest']->value)&&$_smarty_tpl->tpl_vars['is_guest']->value) {?>
 									<a href="<?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['filename'], ENT_QUOTES, 'UTF-8', true);?>
-<?php $_tmp7=ob_get_clean();?><?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['download_hash'], ENT_QUOTES, 'UTF-8', true);?>
-<?php $_tmp8=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('get-file',true,null,"key=".$_tmp7."-".$_tmp8."&amp;id_order=".((string)$_smarty_tpl->tpl_vars['order']->value->id)."&secure_key=".((string)$_smarty_tpl->tpl_vars['order']->value->secure_key)), ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp1=ob_get_clean();?><?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['download_hash'], ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp2=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('get-file',true,null,"key=".$_tmp1."-".$_tmp2."&amp;id_order=".((string)$_smarty_tpl->tpl_vars['order']->value->id)."&secure_key=".((string)$_smarty_tpl->tpl_vars['order']->value->secure_key)), ENT_QUOTES, 'UTF-8', true);?>
 " title="<?php echo smartyTranslate(array('s'=>'Download this product'),$_smarty_tpl);?>
 ">
 									<?php } else { ?>
 										<a href="<?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['filename'], ENT_QUOTES, 'UTF-8', true);?>
-<?php $_tmp9=ob_get_clean();?><?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['download_hash'], ENT_QUOTES, 'UTF-8', true);?>
-<?php $_tmp10=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('get-file',true,null,"key=".$_tmp9."-".$_tmp10), ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp3=ob_get_clean();?><?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['download_hash'], ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp4=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('get-file',true,null,"key=".$_tmp3."-".$_tmp4), ENT_QUOTES, 'UTF-8', true);?>
 " title="<?php echo smartyTranslate(array('s'=>'Download this product'),$_smarty_tpl);?>
 ">
 									<?php }?>
@@ -532,15 +532,15 @@ icon/download_product.gif" class="icon" alt="<?php echo smartyTranslate(array('s
 									</a>
 									<?php if (isset($_smarty_tpl->tpl_vars['is_guest']->value)&&$_smarty_tpl->tpl_vars['is_guest']->value) {?>
 										<a href="<?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['filename'], ENT_QUOTES, 'UTF-8', true);?>
-<?php $_tmp11=ob_get_clean();?><?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['download_hash'], ENT_QUOTES, 'UTF-8', true);?>
-<?php $_tmp12=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('get-file',true,null,"key=".$_tmp11."-".$_tmp12."&id_order=".((string)$_smarty_tpl->tpl_vars['order']->value->id)."&secure_key=".((string)$_smarty_tpl->tpl_vars['order']->value->secure_key)), ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp5=ob_get_clean();?><?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['download_hash'], ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp6=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('get-file',true,null,"key=".$_tmp5."-".$_tmp6."&id_order=".((string)$_smarty_tpl->tpl_vars['order']->value->id)."&secure_key=".((string)$_smarty_tpl->tpl_vars['order']->value->secure_key)), ENT_QUOTES, 'UTF-8', true);?>
 " title="<?php echo smartyTranslate(array('s'=>'Download this product'),$_smarty_tpl);?>
 "> <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['product_name'], ENT_QUOTES, 'UTF-8', true);?>
  	</a>
 									<?php } else { ?>
 									<a href="<?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['filename'], ENT_QUOTES, 'UTF-8', true);?>
-<?php $_tmp13=ob_get_clean();?><?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['download_hash'], ENT_QUOTES, 'UTF-8', true);?>
-<?php $_tmp14=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('get-file',true,null,"key=".$_tmp13."-".$_tmp14), ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp7=ob_get_clean();?><?php ob_start();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['download_hash'], ENT_QUOTES, 'UTF-8', true);?>
+<?php $_tmp8=ob_get_clean();?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('get-file',true,null,"key=".$_tmp7."-".$_tmp8), ENT_QUOTES, 'UTF-8', true);?>
 " title="<?php echo smartyTranslate(array('s'=>'Download this product'),$_smarty_tpl);?>
 "> <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['product']->value['product_name'], ENT_QUOTES, 'UTF-8', true);?>
  	</a>

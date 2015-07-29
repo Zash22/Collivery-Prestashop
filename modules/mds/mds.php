@@ -532,11 +532,6 @@ class Mds extends CarrierModule {
 	}
 
 
-// 	function getColliveryTo($params)
-// 	{
-// 	
-// 		return $colliveryParams;	
-// 	}
 
 	function addColliveryAddressTo($params)
 	{
@@ -545,8 +540,6 @@ class Mds extends CarrierModule {
 		$sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'address
 		WHERE id_address = \'' . $addAddress1 . '\' AND deleted = 0';
 		$addressRow = Db::getInstance()->getRow($sql);
-		//print_r($addressRow);
-		//$colliveryParams = Array();
 
 		$colliveryParams['company_name'] = $addressRow['company'];
 		$colliveryParams['building'] = '';
@@ -565,8 +558,6 @@ class Mds extends CarrierModule {
 		WHERE id_customer = \'' . $custId . '\'';
 		$colliveryParams['email'] = Db::getInstance()->getValue($sql);
 		
-		//print_r($colliveryParams);
-
 		try {
 			return $this->mdsService->addColliveryAddress($colliveryParams);
 		} catch (Exception $e) {
@@ -575,23 +566,24 @@ class Mds extends CarrierModule {
 
 	}
 
-	function addColliveryAddressFrom($params)
+	function getDefaultColliveryAddressFrom($params)
 	{
 
 		$colliveryAddressesFrom = $this->mdsService->returnDefaultAddress();
 
-		foreach ($colliveryAddressesFrom['contacts'] as $colliveryAddressFrom) {
+		foreach ($colliveryAddressesFrom['contacts'] as $colliveryAddressFrom) 
+		{
 		}
 
 		return $colliveryAddressFrom;
 	}
 
+
 	public function buildColliveryDataArray($params)
 	{
 
-		//$cartProducts = Array();
 		$colliveryAddressTo = $this->addColliveryAddressTo($params);
-		$colliveryAddressFrom = $this->addColliveryAddressFrom($params);
+		$colliveryAddressFrom = $this->getDefaultColliveryAddressFrom($params);
 
 		$cart = $params['cart'];
 		$cartProducts = $cart->getProducts();
@@ -602,14 +594,16 @@ class Mds extends CarrierModule {
 		$colliveryParams['collivery_type'] = '2';
 
 		foreach ($cart->getProducts() as $colliveryProduct) {
-			$colliveryParams['parcels'][] = array(
-				'weight' => $colliveryProduct['weight'],
-				'height' => $colliveryProduct['height'],
-				'width' => $colliveryProduct['width'],
-				'length' => $colliveryProduct['depth']
-			);
+			for ($i = 0; $i < $colliveryProduct['cart_quantity']; $i++)
+			{	echo $i;
+				$colliveryParams['parcels'][] = array(
+					'weight' => $colliveryProduct['weight'],
+					'height' => $colliveryProduct['height'],
+					'width' => $colliveryProduct['width'],
+					'length' => $colliveryProduct['depth']
+				);
+			}
 		}
-
 
 		return $colliveryParams;
 
@@ -622,19 +616,14 @@ class Mds extends CarrierModule {
 		$sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'address
 		WHERE id_address = \'' . $addAddress1 . '\' AND deleted = 0';
 		$addressRow = Db::getInstance()->getRow($sql);
-		
-		//print_r($addressRow);
-		
-		$colliveryAddressFrom = $this->addColliveryAddressFrom($params);
-		
-		//print_r($colliveryAddressFrom);
 
-		
+		$colliveryAddressFrom = $this->getDefaultColliveryAddressFrom($params);
+
 		$colliveryGetPriceArray = Array();
- 		$colliveryGetPriceArray['from_town_id'] = $addressRow['id_state'];
- 		$colliveryGetPriceArray['collivery_from'] = $addressRow['id_customer'];
-// 		$colliveryGetPriceArray['to_town_id'];
-// 		$colliveryGetPriceArray['collivery_to'];
+ 		$colliveryGetPriceArray['to_town_id'] = $addressRow['id_state'];
+ 		$colliveryGetPriceArray['collivery_from'] = $colliveryAddressFrom['address_id'];
+
+		return $colliveryGetPriceArray;
 	
 	}
 
@@ -645,12 +634,10 @@ class Mds extends CarrierModule {
 
 	public function getOrderShippingCost($params, $shipping_cost)
 	{
-		//print_r($params);
-
-		//$orderParams = $this->buildColliveryDataArray($params);
 		$orderParams = $this->buildColliveryGetPriceArray($params);
-		
-	
+
+		$orderParams['service'] = 1;
+		$colliveryPriceOptions = $this->collivery->getPrice($orderParams);
 
 		switch ($this->id_carrier) {
 			case '100':
@@ -702,41 +689,39 @@ class Mds extends CarrierModule {
 
 	public function hookLeftColumn()
 	{
-// 		$towns = $this->collivery->getTowns();
-// 
-// 		$query = new DbQuery();
-// 		$query->select('count(*)');
-// 		$query->from('state');
-// 		$numberOfTowns = Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue($query);
-// 		
-// 		if ($numberOfTowns != array_count_values($towns))
-// 		{
-// 
-// 			$sql = 'DELETE * FROM '._DB_PREFIX_.'state';
-// 			Db::getInstance()->execute($sql);
-// 			
-// 			foreach($towns as $index => $town) 
-// 			{
-// 
-// 				$sql = 'INSERT INTO '._DB_PREFIX_.'state (id_state,id_country,id_zone,name,iso_code,tax_behavior,active)
-// 				VALUES 
-// 				('.$index.',30,4,\''.$town.'\',\'za\',0,1)';
-// 				 Db::getInstance()->execute($sql);
-// 			}
-// 
-// 		}
+		$towns = $this->collivery->getTowns();
+
+		$query = new DbQuery();
+		$query->select('count(*)');
+		$query->from('state');
+		$numberOfTowns = Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue($query);
+		
+		if ($numberOfTowns != array_count_values($towns))
+		{
+
+			$sql = 'DELETE * FROM '._DB_PREFIX_.'state';
+			Db::getInstance()->execute($sql);
+			
+			foreach($towns as $index => $town) 
+			{
+
+				$sql = 'INSERT INTO '._DB_PREFIX_.'state (id_state,id_country,id_zone,name,iso_code,tax_behavior,active)
+				VALUES 
+				('.$index.',30,4,\''.$town.'\',\'za\',0,1)';
+				 Db::getInstance()->execute($sql);
+			}
+
+		}
 
 	}
 
 	public function hookActionPaymentConfirmation($params)
 	{
-			//die('hello');
-		$orderParams = $this->buildColliveryDataArray($params);
-		
-	//	print_r($params['cart']->id_carrier);
-			//echo $this->id_carrier;
 
-		switch ($params['cart']->id_carrier) {
+		$orderParams = $this->buildColliveryDataArray($params);
+
+		switch ($params['cart']->id_carrier) 
+		{
 			case '100':
 				$orderParams['service'] = 1;
 				break;
@@ -757,14 +742,14 @@ class Mds extends CarrierModule {
 				return false;
 		}
 		
-	//	die($this->id_carrier);
-
-		try {
+		try 
+		{
 	
 			return $this->mdsService->addCollivery($orderParams, true);
-		} catch (Exception $e) {
-			die($e->getMessage());
-		}
+		} catch (Exception $e) 
+			{
+				die($e->getMessage());
+			}
 
 	}
 

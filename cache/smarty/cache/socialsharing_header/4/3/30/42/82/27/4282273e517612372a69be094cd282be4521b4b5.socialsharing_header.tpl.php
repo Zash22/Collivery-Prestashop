@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:128651674455a9a41e4ea461-28334900%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:205207001755b74284e92be9-54016962%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -9,28 +9,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '128651674455a9a41e4ea461-28334900',
-  'variables' => 
-  array (
-    'request' => 0,
-    'meta_title' => 0,
-    'shop_name' => 0,
-    'meta_description' => 0,
-    'link_rewrite' => 0,
-    'cover' => 0,
-    'link' => 0,
-    'pretax_price' => 0,
-    'currency' => 0,
-    'price' => 0,
-    'weight' => 0,
-    'weight_unit' => 0,
-  ),
-  'has_nocache_code' => false,
+  'nocache_hash' => '205207001755b74284e92be9-54016962',
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_55a9a41e67b5d5_52629946',
+  'unifunc' => 'content_55b89756d2c435_19383276',
+  'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55a9a41e67b5d5_52629946')) {function content_55a9a41e67b5d5_52629946($_smarty_tpl) {?><meta property="og:type" content="product" /> 
+<?php if ($_valid && !is_callable('content_55b89756d2c435_19383276')) {function content_55b89756d2c435_19383276($_smarty_tpl) {?><meta property="og:type" content="product" /> 
 <meta property="og:url" content="http://localhost/Collivery-Prestashop/index.php?id_product=4&controller=product" /> 
 <meta property="og:title" content="Printed Dress - MDS Test" /> 
 <meta property="og:site_name" content="MDS Test" />
